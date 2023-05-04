@@ -1,0 +1,113 @@
+body {
+	margin: 0;
+	padding: 0;
+	background-image: url("../images/main_backgound.jpg");
+	background-repeat: no-repeat;
+	background-attachment: fixed;
+	background-size: cover;
+}
+#main {
+	overflow: hidden;
+}
+
+nav {
+	padding: 10px 30px;
+	display: flex;
+	justify-content: space-between;
+	align-items: center;
+	height: 100px;
+}
+nav img {
+	height: 100px;
+}
+.anchor {
+	width: 50%;
+	display: flex;
+	align-items: center;
+	justify-content: space-evenly;
+}
+.anchor a {
+	color: white;
+	text-decoration: none;
+	font-size: 1.5rem;
+}
+.userLoginRegister {
+	width: 20%;
+	display: flex;
+	justify-content: space-evenly;
+}
+
+section {
+	min-height: 100vh;
+	display: flex;
+	justify-content: center;
+	align-items: center;
+}
+
+.effect-holder {
+	height: auto;
+	width: 400px;
+	border-radius: 16px;
+	float: left;
+	background-size: 100%;
+	background-repeat: no-repeat;
+	background-image: url(image.png);
+}
+
+.dropdown-style {
+	margin: 0 1rem 0 0;
+	background-color: #ffffff7d;
+	margin: 2rem;
+	border-radius: 12px;
+	padding: 1rem;
+	position: relative;
+	box-shadow: 0 10px 15px rgb(0 0 0 / 20%);
+	box-sizing: border-box;
+	width: calc(100% - 4rem);
+	color: rgba(0, 0, 0, 0.9);
+	backdrop-filter: blur(33px);
+	background-blend-mode: overlay;
+	display: flex;
+	align-items: center;
+}
+
+.dropdown-style > img {
+	width: 32px;
+	margin: 0 1rem 0 0;
+}
+
+section h1 {
+	font-size: 3rem;
+	margin: 20px;
+}
+
+section h2 {
+	font-size: 40px;
+	text-align: center;
+	text-transform: uppercase;
+}
+
+/* Media Query */
+
+@media (max-width: 900px) {
+	section h1 {
+		font-size: 2rem;
+		text-align: center;
+	}
+
+	section .text-container {
+		flex-direction: column;
+	}
+}
+
+.reveal {
+	position: relative;
+	transform: translateY(150px);
+	opacity: 0;
+	transition: 1s all ease;
+}
+
+.reveal.active {
+	transform: translateY(0);
+	opacity: 1;
+}

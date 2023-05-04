@@ -1,0 +1,107 @@
+*{
+    margin: 0;
+    padding: 0;
+    font-family: sans-serif;
+}
+.main{
+    height: 100%;
+    width: 100%;
+    background-image: linear-gradient(rgba(0,0,0,0.4),rgba(0,0,0,0.4)),url(/images/Background.jpg);
+    background-position: center;
+    background-size: cover;
+    position: absolute;
+}
+.form-box{
+    width: 420px;
+    height: 480px;
+    position: relative;
+    margin: 6% auto;
+    border-radius: 30px;
+    background: #fff;
+    padding: 5px;
+    overflow: hidden;
+}
+.button-box{
+    width: 220px;
+    margin: 35px auto;
+    position: relative;
+    box-shadow: 0 0 20px 3px #558ed8;
+    border-radius: 30px;
+}
+.toggle-btn{
+    padding: 10px 30px;
+    cursor: pointer;
+    background: transparent;
+    border: 0;
+    outline: none;
+    position: relative;
+}
+#btn{
+    top: 0;
+    left: 0;
+    position: absolute;
+    width: 110px;
+    height: 40px;
+    background: linear-gradient(to right, #396aab,#035fd8);
+    border-radius: 30px;
+    transition: .5s;
+}
+.input-group{
+    top:180px;
+    position: absolute;
+    width: 320px;
+    transition: .5s;
+}
+.input-field{
+    width: 100%;
+    padding: 10px 0;
+    margin: 5px 0;
+    border-left: 0;
+    border-top: 0;
+    border-right: 0;
+    border-bottom: 1px solid #293b52;
+    outline: none;
+    background: transparent;
+}
+.submit-btn{
+    width: 85%;
+    padding: 10px 30px;
+    cursor: pointer;
+    display: block;
+    margin: auto;
+    margin-top: 5px;
+    background: linear-gradient(to right, #396aab,#035fd8);
+    border: 0;
+    outline: none;
+    border-radius: 30px;
+    color: #fff;
+    font-weight: bolder;
+}
+.submit-btn img{
+    height: 20px;
+    width: 20px;
+    border-radius: 15px;
+}
+.submit-btn:hover{
+    color: #035fd8;
+    background: #fff;
+    outline: 2px solid #035fd8;
+}
+.checkbox{
+    margin: 30px 10px 30px 0;
+}
+.spans{
+    color: #777;
+    font-size: 12px;
+    bottom: 64px;
+    position: absolute;
+}
+#signin{
+    left: 50px;
+}
+#signup{
+    left: 450px;
+}
+#signup a{
+    color: #004aad;
+}

@@ -152,15 +152,20 @@ h4{
     outline: none;
 }
 .chat-div{
-    height: 35px;
+    width: max-content;
+    height: auto;
+    padding: 5px;
     color: #000;
     background-color: aquamarine;
-    margin-bottom: 5px;
+    margin: 5px;
     border-top-right-radius: 10px;
     border-bottom-right-radius: 10px;
+    box-sizing: content-box;
 }
 .chat-div p{
-    margin: 0px;
+    width: auto;
+    height: auto;
+    margin: 1px 5px;
     display: block;
 }
 #chat~button{

@@ -34,18 +34,24 @@ io.on('connection', (socket) => {
     const user = getCurrentUser(socket.id)
     socket.broadcast.to(user.room).emit('typing',username)
   })
+  socket.on('chat', (chat) => {
+    const user = getCurrentUser(socket.id)
+    io.to(user.room).emit('chat',formateMessage(user.username,chat))
+  })
   socket.on('disconnect', () => {
     const user = userLeave(socket.id)
     console.log('one user left')
 
-    // Broadcastion other users on leaving
-    io.to(user.room).emit('message', `Chat AI :- ${user.username} has left the chat`)
+    if(user){
+      // Broadcastion other users on leaving
+      io.to(user.room).emit('message', `Chat AI :- ${user.username} has left the chat`)
 
-    // getting room users.
-    io.to(user.room).emit('roomUsers', {
-      room: user.room,
-      users: getRoomUsers(user.room)
-    })
+      // getting room users.
+      io.to(user.room).emit('roomUsers', {
+        room: user.room,
+        users: getRoomUsers(user.room)
+      })
+    }
   })
 })
 

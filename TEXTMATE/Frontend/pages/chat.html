@@ -1,0 +1,94 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="../style/chat.css">
+    <title>Chat Page</title>
+    <style>
+        
+    </style>
+</head>
+<body>
+     <div class="flex">
+        <div class="flex roomDetails">
+            <h1>Room Name <span></span></h1>
+            <h3>Total users <span>0</span></h3>
+        </div>
+        <div id="alert">
+            <h2 id="typewriter">Welcome to TextMate</h2>
+        </div>
+     </div>
+     <div class="flex main">
+        <div id="text">
+            <div class="textarea-container">
+                <div class="row-numbers">
+                  <span>1</span>
+                  <span>2</span>
+                  <span>3</span>
+                  <span>4</span>
+                  <span>5</span>
+                  <span>6</span>
+                  <span>7</span>
+                  <span>8</span>
+                  <span>9</span>
+                  <span>10</span>
+                  <span>11</span>
+                  <span>12</span>
+                  <span>13</span>
+                  <span>14</span>
+                  <span>15</span>
+                  <span>16</span>
+                  <span>17</span>
+                  <span>18</span>
+                  <span>19</span>
+                  <span>20</span>
+                  <span>21</span>
+                  <span>22</span>
+                  <span>23</span>
+                  <span>24</span>
+                  <span>25</span>
+                  <!-- Add more span elements for additional rows as needed -->
+                </div>
+                <textarea value=""></textarea>
+            </div>
+            <div class="flex extraDetails">
+                <h4></h4>
+                <h5></h5>
+            </div>
+            
+        </div>
+        <div>
+            <select name="language" id="">
+                <option value="">Plaintext</option>
+            </select>
+            <div id="users">
+                <div class="flex">
+                    <h2>Users</h2>
+                    <div>
+                        <img src="../images/mic-off.svg" alt="" onclick="micOn()" id="micOff">
+                        <img src="../images/mic.svg" alt="" onclick="micOff()" id="micOn">
+                        <img src="../images/leave.svg" alt="" onclick="window.location.href='../index.html'">
+                    </div>
+                </div>
+                <div id="allUsers">
+                    <!-- <div>
+                        <h1>A</h1>
+                        <p>Ashik</p>
+                    </div> -->
+                </div>
+            </div>
+            <div id="chat">
+                <h2>Chats</h2>
+                <div id="allChats"></div>
+                <input type="text">
+            </div>
+            <!-- <button>Leave Room</button> -->
+        </div>
+     </div>
+     
+</body>
+<script src="https://cdn.socket.io/4.6.0/socket.io.min.js" integrity="sha384-c79GN5VsunZvi+Q/WObgk2in0CbZsHnjEqvFxC5DxHn9lTfNce2WW6h2pH6u/kF+" crossorigin="anonymous"></script>
+<script src="../scripts/chat.js"></script>
+</html>

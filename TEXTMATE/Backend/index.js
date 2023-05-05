@@ -65,6 +65,17 @@ io.on('connection', (socket) => {
   })
 })
 
-server.listen(8080, () => {
-  console.log('Server listening on port 8080')
-})
+
+server.listen(8080,async () => {
+
+  try {
+
+    await mongoose.connect(process.env.mongoURL)
+    console.log("connected to database..")
+
+  } catch (error) {
+
+    console.log({msg:error.message})
+  }
+
+

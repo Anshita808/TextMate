@@ -1,0 +1,135 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>TextMate - Admin</title>
+    <!-- jquery -->
+    <script src="https://code.jquery.com/jquery-1.10.2.js"></script>
+    <link rel="stylesheet" href="/style/adminpage.css">
+</head>
+<body>
+    <header></header>
+    <div class="container">
+        <div class="tabs">
+            <input type="radio" id="chats" name="group" checked>
+            <input type="radio" id="status" name="group">
+            <input type="radio" id="calls" name="group">
+
+            <div class="buttons">
+                <label for="chats">Manage Users</label>
+                <label for="status">Manage Feedbacks</label>
+                <label for="calls">Settings</label>
+                <div class="underline"></div>
+            </div>
+
+            <div class="content">
+                <div class="box chats">
+                    <div class="chatlist">
+                        <div class="block">
+                            <div class="imgbx green">
+                                <ion-icon name="link"></ion-icon>
+                            </div>
+                            <div class="details" id="create_call">
+                                <div class="listHead">
+                                    <h4>User Count : <span>0</span></h4>
+                                </div>
+                            </div>
+                        </div>
+                        <label>Users</label>
+                        <div class="block">
+                            <div class="imgbx">
+                                <img src="#">
+                            </div>
+                            <div class="details">
+                                <div class="listHead">
+                                    <h4>#name</h4>
+                                </div>
+                            </div>
+                            <div class="ban">
+                                <button id="ban-user">Block User</button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="box status">
+                    <!-- append the group cards -->
+                </div>
+                <div class="box calls">
+                    <div class="data">
+                        <div class="chatlist">
+                            <div class="block">
+                                <div class="imgbx green">
+                                    <ion-icon name="link"></ion-icon>
+                                </div>
+                                <div class="details" id="create_call">
+                                    <div class="listHead">
+                                        <h4>Admin</h4>
+                                    </div>
+                                </div>
+                            </div>
+                            <label>Settings</label>
+                            <div class="block">
+                                <div class="imgbx">
+                                    <img src="#">
+                                </div>
+                                <div class="details">
+                                    <div class="listHead">
+                                        <h4>User</h4>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="block">
+                                <div class="imgbx">
+                                    <img src="#">
+                                </div>
+                                <div class="details">
+                                    <div class="listHead">
+                                        <h4>Community</h4>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="block">
+                                <div class="imgbx">
+                                    <img src="#">
+                                </div>
+                                <div class="details">
+                                    <div class="listHead">
+                                        <h4>Persionalise</h4>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="block">
+                                <div class="imgbx">
+                                    <img src="#">
+                                </div>
+                                <div class="details">
+                                    <div class="listHead">
+                                        <h4>General</h4>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="block">
+                                <div class="imgbx">
+                                    <img src="#">
+                                </div>
+                                <div class="details">
+                                    <div class="listHead">
+                                        <h4>Version</h4>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</body>
+</html>
+<script>
+    $(function () {
+        $('header').load('header.html');
+    }) 
+</script>

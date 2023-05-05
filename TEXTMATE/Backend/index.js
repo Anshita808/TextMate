@@ -10,6 +10,9 @@ const io = socketio(server)
 
 app.use(cors())
 
+
+app.use("/user",userRouter)
+
 io.on('connection', (socket) => {
   socket.on('joinRoom', ({ username, room }) => {
     const user = userJoin(socket.id, username, room)

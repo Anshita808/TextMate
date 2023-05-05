@@ -1,43 +1,17 @@
 const express = require('express')
 const http = require('http')
 const socketio = require('socket.io')
+const cors=require('cors')
 const { userJoin, getRoomUsers, getCurrentUser, userLeave, formateMessage} = require('./users')
-const mongoose = require("mongoose")
-const { userRouter } = require('./routes/user.route')
-require("dotenv").config()
 
 const app = express()
-app.use(express.json())
 const server = http.createServer(app)
 const io = socketio(server)
 
+app.use(cors())
 
 
 app.use("/user",userRouter)
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 
 io.on('connection', (socket) => {
   socket.on('joinRoom', ({ username, room }) => {
@@ -70,6 +44,10 @@ io.on('connection', (socket) => {
     const user = getCurrentUser(socket.id)
     io.to(user.room).emit('chat',formateMessage(user.username,chat))
   })
+  socket.on('stream', ({room, status}) => {
+    const user = getCurrentUser(socket.id)
+    io.to(room).emit('stream', {user,status});
+  });
   socket.on('disconnect', () => {
     const user = userLeave(socket.id)
     console.log('one user left')
@@ -87,18 +65,6 @@ io.on('connection', (socket) => {
   })
 })
 
-server.listen(8080,async () => {
-
-  try {
-
-    await mongoose.connect(process.env.mongoURL)
-    console.log("connected to database..")
-
-  } catch (error) {
-
-    console.log({msg:error.message})
-  }
-
+server.listen(8080, () => {
   console.log('Server listening on port 8080')
-
 })

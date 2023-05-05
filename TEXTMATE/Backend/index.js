@@ -3,6 +3,7 @@ const http = require('http')
 const socketio = require('socket.io')
 const { userJoin, getRoomUsers, getCurrentUser, userLeave, formateMessage} = require('./users')
 const mongoose = require("mongoose")
+require("dotenv").config()
 
 const app = express()
 app.use(express.json())
@@ -61,11 +62,11 @@ server.listen(8080,async () => {
 
   try {
 
-    await mongoose.connect("mongodb://127.0.0.1:27017/Textmate")
+    await mongoose.connect(process.env.mongoURL)
     console.log("connected to database..")
 
   } catch (error) {
-    
+
     console.log({msg:error.message})
   }
 

@@ -2,8 +2,10 @@ const express = require('express')
 const http = require('http')
 const socketio = require('socket.io')
 const { userJoin, getRoomUsers, getCurrentUser, userLeave, formateMessage} = require('./users')
+const mongoose = require("mongoose")
 
 const app = express()
+app.use(express.json())
 const server = http.createServer(app)
 const io = socketio(server)
 
@@ -55,6 +57,18 @@ io.on('connection', (socket) => {
   })
 })
 
-server.listen(8080, () => {
+server.listen(8080,async () => {
+
+  try {
+
+    await mongoose.connect("mongodb://127.0.0.1:27017/Textmate")
+    console.log("connected to database..")
+
+  } catch (error) {
+    
+    console.log({msg:error.message})
+  }
+
   console.log('Server listening on port 8080')
+
 })

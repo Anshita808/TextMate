@@ -20,7 +20,7 @@
     </div>
 
     </nav>
-     <div style="display: none;" id="mainContaint">
+     <div id="mainContaint" style="display: none;">
         <div class="flex">
             <div class="flex roomDetails">
                 <h1>Room Name <span></span></h1>
@@ -69,7 +69,7 @@
                 </div>
                 
             </div>
-            <div>
+            <div id="rightDiv" style="display: block;">
                 <button id="invite-btn"><span>Invite TeamMates</span><ion-icon name="share-social-outline"></ion-icon></button>
                 <div id="users">
                     <div class="flex">
@@ -96,6 +96,23 @@
                     <input type="text" placeholder="Type a message"><ion-icon name="send"></ion-icon>
                 </div>
                 
+            </div> 
+            <div id="inviteDiv" style="display: none;">
+                <input type="text" placeholder="Enter User Name">
+                <div id="invUsers">
+                    <div class="flex">
+                        <p>Ashiqur Rahaman</p>
+                        <p onclick="send('Ashiqur Rahaman')">Send</p>
+                    </div>
+                </div>
+                <div id="icon">
+                    <img src="../images/link.png" alt="" id="copyLink">
+                    <img src="../images/whatsapp.png" alt="">
+                    <img src="../images/messenger.png" alt="">
+                    <img src="../images/telegram.png" alt="">
+                    <img src="../images/gmail.png" alt="">
+                </div>
+                <button id="done-btn">Done</button>
             </div>
          </div>
      </div>
@@ -109,7 +126,7 @@
                     <h3 id="create">Create Room</h3>
                 </div>
                 <form action="" id="join-form">
-                    <input type="text" placeholder="Enter Room Name">
+                    <input type="text" placeholder="Enter Room Name" name="room">
                     <input type="password" placeholder="Enter Room Password">
                     <button id="join-btn">Join Room</button>
                 </form>

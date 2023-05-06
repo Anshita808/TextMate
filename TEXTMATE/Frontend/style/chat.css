@@ -325,3 +325,57 @@ form>button{
     top: 10%;
     right: 1%;
 }
+
+
+#inviteDiv>input{
+    display: block;
+    width: 100%;
+    margin-bottom: 30px;
+    height: 40px;
+    outline: none;
+    border: 0px;
+    border-bottom: #ffffff solid 3px;
+    background-color: transparent;
+    font-size: 17px;
+    color: #ffffff;
+}
+#inviteDiv>input::placeholder{
+    font-size: 17px;
+    color: #ffffff;
+    background-image: url('../images/search.png');
+    background-size: contain;
+    background-repeat: no-repeat;
+    background-position: center right;
+    margin-right: 3%;
+}
+#invUsers{
+    height: 51vh;
+}
+#invUsers>div>p:nth-child(2){
+    color: #000;
+    padding: 5px;
+    background-color: #0efd8e;
+    cursor: pointer;
+}
+#icon{
+    display: flex;
+    justify-content: space-between;
+}
+#icon>img{
+    width: 15%;
+    opacity: .75;
+}
+#icon>img:hover{
+    opacity: 1;
+    cursor: pointer;
+}
+#icon~button{
+    display: block;
+    width: 100%;
+    margin-top: 1vh;
+    margin-bottom: 30px;
+    height: 40px;
+    font-size: 20px;
+    font-weight: 550;
+    cursor: pointer;
+}

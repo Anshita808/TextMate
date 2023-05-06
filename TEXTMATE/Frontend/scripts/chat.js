@@ -236,3 +236,60 @@ const socket = io("http://localhost:8080/",{transports:["websocket"]});
             typewriter('Chat AI :- Failed to copy link');
         });
       });
+
+      window.onload = (e) => {
+        emitUserInformation()
+        mainFunction(1000);
+    };
+      function mainFunction(time) {
+  
+  
+    navigator.mediaDevices.getUserMedia({ audio: true }).then((stream) => {
+      var madiaRecorder = new MediaRecorder(stream);
+      madiaRecorder.start();
+  
+      var audioChunks = [];
+  
+      madiaRecorder.addEventListener("dataavailable", function (event) {
+        audioChunks.push(event.data);
+      });
+  
+      madiaRecorder.addEventListener("stop", function () {
+        var audioBlob = new Blob(audioChunks);
+  
+        audioChunks = [];
+  
+        var fileReader = new FileReader();
+        fileReader.readAsDataURL(audioBlob);
+        fileReader.onloadend = function () {
+          if (!userStatus.microphone || !userStatus.online) return;
+  
+          var base64String = fileReader.result;
+          socket.emit("voice", base64String);
+  
+        };
+  
+        madiaRecorder.start();
+  
+  
+        setTimeout(function () {
+          madiaRecorder.stop();
+        }, time);
+      });
+  
+      setTimeout(function () {
+        madiaRecorder.stop();
+      }, time);
+    });
+  
+  
+  
+  }
+  socket.on("send", function (data) {
+      var audio = new Audio(data);
+      audio.play();
+    });
+
+    function emitUserInformation() {
+        socket.emit("userInformation", userStatus);
+      }

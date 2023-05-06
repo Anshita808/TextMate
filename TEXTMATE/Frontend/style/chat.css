@@ -100,6 +100,7 @@ h4{
 }
 
 #text~div{
+    display: block;
     width: 19%;
 }
 #text~div h2{
@@ -378,4 +379,107 @@ form>button{
     font-size: 20px;
     font-weight: 550;
     cursor: pointer;
+}
+
+@media (min-width: 1560px) {
+	body{
+        width: 1560px;
+        margin: auto;
+    }
+}
+@media (max-width: 1200px) {
+	.anchor {
+        width: 45%;
+    }
+}
+@media (max-width: 960px) {
+	.anchor {
+        width: 55%;
+    }
+    .roomDetails{
+        flex-direction: column;
+    }
+    #text{
+        width: 70%;
+    }
+    #text~div{
+        width: 29%;
+    }
+}
+@media (max-width: 750px) {
+	.anchor {
+        width: 60%;
+    }
+    .anchor>a:nth-child(1){
+        display: none;
+    }
+    .roomDetails{
+        flex-direction: column;
+    }
+    .details{
+        flex-direction: column;
+    }
+    #text{
+        width: 70%;
+    }
+    #text~div{
+        width: 29%;
+    }
+}
+@media (max-width: 550px) {
+	.anchor {
+        width: 20%;
+    }
+    .anchor>a:nth-child(2){
+        display: none;
+    }
+    .anchor>a:nth-child(3){
+        display: none;
+    }
+    .flex{
+        flex-direction: column;
+    }
+    .details{
+        flex-direction: column;
+    }
+    #text{
+        width: 100%;
+        height: 83vh;
+        margin-bottom: 20px;
+    }
+    #text~div{
+        width: 100%;
+        display: grid;
+        grid-template-columns: repeat(2,1fr);
+        gap: 10px;
+    }
+    #text~div>button:nth-child(1){
+        display: none;
+    }
+    #allUsers{
+        height: 250px;
+    }
+    #allUsers>div{
+        height: 33%;
+    }
+    #users>div:nth-child(1){
+        flex-direction: row;
+    }
+    #users>div:nth-child(1)>div>img{
+        width: 30%;
+    }
+    #form{
+        flex-direction: column;
+    }
+    #form>div{
+        width: 100%;
+        margin-top: 20px;
+    }
+    #form>div:nth-child(1){
+        margin-top: 20px;
+    }
+    #form>div>img{
+        width: 99%;
+        margin: auto;
+    }
 }

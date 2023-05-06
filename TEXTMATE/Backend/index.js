@@ -3,6 +3,7 @@ const http = require('http')
 const socketio = require('socket.io')
 const cors=require('cors')
 const { userJoin, getRoomUsers, getCurrentUser, userLeave, formateMessage} = require('./users')
+const userRouter=require("./routes/user.route")
 const handlebars = require("express-handlebars");
 
 const app = express()

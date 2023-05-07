@@ -205,9 +205,9 @@ input[type=number]::-webkit-outer-spin-button {
     height: 50px;
     border-radius: 50%;
     border: 4px dotted #111111 ;
-    border-top-color: #ffffff;
-    border-left-color: #777777;
-    border-right-color: #ffffff;
+    border-top-color: #16161649;
+    border-right-color: #00000091;
+    border-left-color: #ffffff25;
     border-width: 10px;
     animation: spin 1s ease-in-out infinite;
   }

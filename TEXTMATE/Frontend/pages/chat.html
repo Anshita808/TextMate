@@ -12,7 +12,7 @@
 </head>
 <body>
     <nav>
-    <img src="../textmate-logo.png" alt="logo">
+    <img src="../images/textmate-logo.png" alt="logo">
     <div class="anchor">
         <a href="about.html">About Us</a><a href="products.html">Our Products</a><a href="contact.html">Contact
             Us</a>
@@ -127,12 +127,20 @@
                 </div>
                 <form action="" id="join-form">
                     <input type="text" placeholder="Enter Room Name" name="room">
-                    <input type="password" placeholder="Enter Room Password">
+                    <input type="password" placeholder="Enter Room Password" id="password">
+                    <div id="eye">
+                        <ion-icon name="eye-off-outline"></ion-icon>
+                        <ion-icon name="eye-outline"></ion-icon>
+                    </div>
                     <button id="join-btn">Join Room</button>
                 </form>
                 <form action="" style="display: none;" id="create-form">
                     <input type="text" placeholder="Create Room Name">
-                    <input type="password" placeholder="Create Room Password">
+                    <input type="password" placeholder="Create Room Password" id="passwordCreate">
+                    <div id="eye">
+                        <ion-icon name="eye-off-outline" id="hide"></ion-icon>
+                        <ion-icon name="eye-outline" id="show"></ion-icon>
+                    </div>
                     <button id="create-btn">Create Room</button>
                 </form>
             </div>

@@ -411,3 +411,34 @@ const socket = io("http://localhost:8080/",{transports:["websocket"]});
     }
 
     
+    const showPassword=document.querySelector("#eye>ion-icon:nth-child(2)")
+    const hidePassword=document.querySelector("#eye>ion-icon:nth-child(1)")
+    
+    showPassword.addEventListener('click', function() {
+        document.querySelector("#password").setAttribute('type', 'text');
+
+        showPassword.style.display = 'none';
+        hidePassword.style.display = 'block';
+    })
+    hidePassword.addEventListener('click', function() {
+        document.querySelector("#password").setAttribute('type', 'password');
+
+        showPassword.style.display = 'block';
+        hidePassword.style.display = 'none';
+    })
+
+    const show=document.querySelector("#show")
+    const hide=document.querySelector("#hide")
+    
+    show.addEventListener('click', function() {
+        document.querySelector("#passwordCreate").setAttribute('type', 'text');
+
+        show.style.display = 'none';
+        hide.style.display = 'block';
+    })
+    hide.addEventListener('click', function() {
+        document.querySelector("#passwordCreate").setAttribute('type', 'password');
+
+        show.style.display = 'block';
+        hide.style.display = 'none';
+    })

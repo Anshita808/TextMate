@@ -791,3 +791,18 @@ input {
     border: 0px;
     border-radius: 5px;
 }
+#eye{
+    position: relative;
+    top: -65px;
+    left: 92%;
+    width: 25px;
+}
+#eye>ion-icon{
+    display: block;
+    width: 25px;
+    height: 25px;
+    cursor: pointer;
+}
+#eye>ion-icon:nth-child(1){
+    display: none;
+}

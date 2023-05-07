@@ -6,18 +6,28 @@
 .main{
     height: 100%;
     width: 100%;
-    background-image: linear-gradient(rgba(0,0,0,0.4),rgba(0,0,0,0.4)),url(/images/Background.jpg);
+    background-image: linear-gradient(rgba(0,0,0,0.4),rgba(0,0,0,0.4)),url("../images/Background.jpg");
     background-position: center;
     background-size: cover;
     position: absolute;
 }
+
+#logo {
+    width: 250px;
+    height: 100px;
+    margin: 20px 25px 0px 30px;
+    transition: .5s;
+}
+
 .form-box{
     width: 420px;
-    height: 480px;
+    height: 580px;
     position: relative;
-    margin: 6% auto;
+    background-color: #ffffffe3;
+    backdrop-filter: blur(33px);
+	background-blend-mode: overlay;
+    margin: auto;
     border-radius: 30px;
-    background: #fff;
     padding: 5px;
     overflow: hidden;
 }
@@ -42,7 +52,7 @@
     position: absolute;
     width: 110px;
     height: 40px;
-    background: linear-gradient(to right, #396aab,#035fd8);
+    background: linear-gradient(to left, #8bb7f1,#316380);
     border-radius: 30px;
     transition: .5s;
 }
@@ -63,38 +73,52 @@
     outline: none;
     background: transparent;
 }
+span{
+    font-size: 13px;
+}
+#signin-btn,#signup-btn{
+    margin-top: 30px;
+    margin-bottom: 10px;
+}
+p{
+    text-align: center;
+}
 .submit-btn{
-    width: 85%;
+    width: 95%;
+    height: 45px;
     padding: 10px 30px;
     cursor: pointer;
     display: block;
     margin: auto;
     margin-top: 5px;
-    background: linear-gradient(to right, #396aab,#035fd8);
+    background: linear-gradient(to left, #8bb7f1,#4182a8);
     border: 0;
     outline: none;
-    border-radius: 30px;
-    color: #fff;
-    font-weight: bolder;
+    border-radius: 15px;
+    color: #ffffff;
+    font-size: 16px;
+    font-weight: 600;
 }
 .submit-btn img{
-    height: 20px;
-    width: 20px;
+    position: absolute;
+    margin-top: -7px;
+    margin-left: -50px;
+    width: 9%;
     border-radius: 15px;
 }
 .submit-btn:hover{
     color: #035fd8;
-    background: #fff;
+    background: #ffffffd8;
     outline: 2px solid #035fd8;
 }
 .checkbox{
-    margin: 30px 10px 30px 0;
+    position: relative;
+    top: 2px;
 }
 .spans{
-    color: #777;
+    color: #242424;
     font-size: 12px;
-    bottom: 64px;
-    position: absolute;
+    margin-left: 5px;
 }
 #signin{
     left: 50px;
@@ -104,4 +128,103 @@
 }
 #signup a{
     color: #004aad;
+}
+
+
+.popup{
+    position: absolute;
+    background-color: rgba(0, 0, 0, 0.315);
+    backdrop-filter: blur(10px);
+    height: 600px;
+    width: 28%;
+    border-radius: 15px ;
+    text-align: center;
+ 
+    top: 0%;
+    left: 50%;
+    transform: translate(-50% , -50%) scale(0.1);
+    visibility: hidden;
+    transition: transform 0.4s , top 0.4s;
+    border: #e2e2e2 1px solid;
+ }
+ .openpopup{
+    visibility: visible;
+    top: 56%;
+    transform: translate(-50% , -50%) scale(1);
+ }
+ .popup>h1{
+    padding-top: 50px;
+    font-family: serif;
+    font-size: 50px;
+    color: white;
+    margin-top: 0px;
+    margin-bottom: 50px;
+ }
+ .popup h3{
+    font-family: serif;
+    font-size: 30px;
+    color: white;
+    margin-bottom: 50px;
+ }
+ #otp{
+    font-size: 30px;
+ }
+ #otpInput input{
+    width: 50px;
+    height: 50px;
+    font-size: 50px;
+    text-align: center;
+    border: 0px;
+    outline: none;
+ }
+ input[type=number]::-webkit-inner-spin-button,
+input[type=number]::-webkit-outer-spin-button {
+    -webkit-appearance: none;
+    margin: 0;
+}
+ #otpButton{
+    width: 30%;
+    height: 40px;
+    cursor: pointer;
+    box-shadow: rgba(149, 157, 165, 0.2) 0px 8px 24px;
+    border-radius: 5px;
+    text-align: center;
+    margin: auto;
+    margin-top: 20px;
+ }
+
+ .popup-open {
+    backdrop-filter: blur(55px);
+  }
+
+  .loading {
+    position: relative;
+    margin: auto;
+    margin-top: 40%;
+    width: 50px;
+    height: 50px;
+    border-radius: 50%;
+    border: 4px dotted #111111 ;
+    border-top-color: #ffffff;
+    border-left-color: #777777;
+    border-right-color: #ffffff;
+    border-width: 10px;
+    animation: spin 1s ease-in-out infinite;
+  }
+  
+  @keyframes spin {
+    to { transform: rotate(360deg); }
+  }
+  #load>p{
+    position: relative;
+    font-size: 50px;
+    color: white;
+  }
+
+  /* for lerger screen */
+@media (min-width:1585px) {
+    body{
+        width: 1585px ;
+        margin: auto;
+    }
 }

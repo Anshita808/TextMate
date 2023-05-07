@@ -1,0 +1,162 @@
+.header{
+    display: flex;
+    align-items: center;
+    width: 100%;
+    /* justify-content: center; */
+    height: 100px;
+    padding: 15px 150px;
+    color: white;
+    background: transparent linear-gradient(180deg,#00295e 0%,#004387 100%) 0% 0% no-repeat padding-box;
+}
+.logo>img{
+    width: 250px;
+
+}
+.logo ~div h2{
+    font-weight: 400;
+    font-size: 30px;
+    margin-left: 20px;
+}
+.main{
+  
+    display: grid;
+    grid-template-columns: 55% 45%;
+    width: 80%;
+    margin: auto;
+    height: 300px;
+    /* border: 1px solid grey; */
+}
+.main h3{
+    margin-top: 20px;
+    font-weight: 400;
+    font-size: 35px;
+    /* margin-left: 20px; */
+
+}
+.left{
+  margin-bottom: 100px;
+
+   
+    /* border: 1px solid grey; */
+    /* padding: 15px */
+}
+.addrex_form{
+ 
+    margin-top: 15px;
+    background-color: white;
+    border: 1px solid grey;
+    padding: 15px;
+
+
+}
+.name_surname{
+    margin-top: 30px;
+display: grid;
+
+grid-template-columns: repeat(2,1fr);
+gap: 10px;
+}
+.name_surname >div{
+    
+    /* border: 1px solid grey; */
+}
+input::placeholder {
+    font-size: 16px;
+    color: grey;
+  }
+  label {
+    font-size: 16px;
+  }
+  input {
+    margin-top: 5px;
+    margin-bottom: 10px;
+    width: 85%;
+    height: 38px;
+    padding: 0 15px;
+    border-radius: 5px;
+    border: 1px solid grey;
+  }
+
+  input:hover {
+    border: 1px solid rgb(36, 33, 33);
+  }
+  .city{
+
+    display: grid;
+    gap: 10px;
+    grid-template-columns:repeat(2,1fr);
+  }
+  .city>:last-child{
+  
+   
+    display: grid;
+    gap: 10px;
+    grid-template-columns:repeat(2,1fr);
+     /* grid-template-columns:  */
+  } 
+  .email_number{
+    gap: 10px;
+    display: grid;
+    grid-template-columns: 68% 30%;
+  }
+  
+  .right{
+    padding: 30px;
+  }
+  
+  #order_total h3{
+   
+    font-size: 20px;
+  }
+  #total_order_element,#dollor{
+    font-size: 16px;
+   
+  }
+  footer{
+    width: 100%;
+  }
+  footer img{
+    width: 100%;
+
+  }
+  #form_submit:hover{
+    text-decoration: none;
+
+  }
+  
+
+  /* payment */
+  .payment_box{
+    /* border: 2px solid red; */
+    margin-top: 50px;
+  }
+
+  .payment_form{
+    /* border: 5px solid rebeccapurple; */
+    margin-top: 20px;
+    background-color: white;
+    padding: 15px;
+    border: 1px solid rgba(128, 128, 128, 0.539);
+    display: grid;
+    grid-template-columns: 3fr 1fr 1fr 1fr;
+    gap: 10px;
+  }
+  input[type="submit"] {
+   height: 50px;
+    position: relative;
+    top: 35px;
+    margin: auto;
+    width: 100%;
+    background: linear-gradient(
+      180deg,
+      #fc5d37 0%,
+      #ed5132 49%,
+      #e64525 100%
+    );
+    font-weight: 800;
+    color: white;
+    font-size: 20px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }

@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>navbar</title>
+    <link rel="stylesheet" href="/style/header.css">
+
+    <!-- google fonts -->
+    <link rel="stylesheet"
+        href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@20..48,100..700,0..1,-50..200" />
+    <!-- jquery -->
+    <script src="https://code.jquery.com/jquery-1.10.2.js"></script>
+</head>
+
+<body>
+    <div id="nav">
+        <div id="nav_section_left">
+            <a href="index.html"> <img id="nav_logo" src="/textmate-logo.png" alt="logo"></a>
+        </div>
+        <div id="logout">
+            <button id="logout-btn">Log Out</button>
+        </div>
+    </div>
+</body>
+
+</html>
+
+<script>
+
+    //    Dynamic searchBar placeholder change 
+    let placeholders = ["Users"];
+    let index = 0;
+
+    setInterval(() => {
+        if (index == placeholders.length) {
+            index = 0;
+        }
+        search.placeholder = `Search for ${placeholders[index]}`;
+        index++;
+    }, 2000);
+
+    let navBottom = document.getElementById("nav_bottom");
+    let logo = document.getElementById("nav_logo");
+    let nav = document.getElementById("nav");
+
+    $(window).on('scroll', function () {
+        if ($(window).scrollTop()) {
+
+            nav.style.marginTop = "-30px";
+            logo.style.marginTop = "25px";
+            // navBottom.style.margin="15px"
+        }
+        else {
+
+            nav.style.marginTop = "0px";
+            logo.style.marginTop = "15px";
+            // navBottom.style.margin="10px"
+
+        }
+    })
+
+</script>

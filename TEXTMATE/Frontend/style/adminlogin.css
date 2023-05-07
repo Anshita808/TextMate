@@ -1,0 +1,87 @@
+*{
+    margin: 0;
+    padding: 0;
+    font-family: sans-serif;
+}
+
+.main{
+    height: 100%;
+    width: 100%;
+    background-image: linear-gradient(rgba(0,0,0,0.4),rgba(0,0,0,0.4)),url(/images/Background.jpg);
+    background-position: center;
+    background-size: cover;
+    position: absolute;
+}
+
+img {
+    width: 250px;
+    height: 100px;
+    margin: 20px 25px 0px 30px;
+    transition: .5s;
+}
+
+.form-box{
+    width: 380px;
+    height: 480px;
+    background-color: #ffffffe3;
+    backdrop-filter: blur(33px);
+	background-blend-mode: overlay;
+    position: relative;
+    margin: 6% auto;
+    border-radius: 30px;
+    box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px;
+    padding: 5px;
+}
+.form-box h2{
+    text-align: center;
+    margin-top: 80px;
+    color: #004aad;
+}
+.input-group{
+    top:180px;
+    position: absolute;
+    width: 280px;
+    transition: .5s;
+}
+.input-field{
+    width: 100%;
+    padding: 10px 0;
+    margin: 5px 0;
+    border-left: 0;
+    border-top: 0;
+    border-right: 0;
+    border-bottom: 1px solid #999;
+    outline: none;
+    background: transparent;
+}
+.submit-btn{
+    width: 85%;
+    padding: 10px 30px;
+    cursor: pointer;
+    display: block;
+    margin: auto;
+    background: linear-gradient(to right, #396aab,#035fd8);
+    border: 0;
+    outline: none;
+    border-radius: 30px;
+    color: #fff;
+    font-weight: bolder;
+}
+.submit-btn:hover{
+    color: #004aad;
+    outline: 2px solid #004aad;
+    background: #ffffffd5;
+}
+.checkbox{
+    margin: 30px 10px 30px 0;
+    color: #004aad;
+}
+span{
+    color: #777;
+    font-size: 12px;
+    bottom: 64px;
+    position: absolute;
+}
+#signin{
+    left: 50px;
+}

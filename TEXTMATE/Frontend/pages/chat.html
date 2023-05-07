@@ -11,84 +11,162 @@
     </style>
 </head>
 <body>
-     <div class="flex">
-        <div class="flex roomDetails">
-            <h1>Room Name <span></span></h1>
-            <h3>Total users <span>0</span></h3>
-        </div>
-        <div id="alert">
-            <h2 id="typewriter">Welcome to TextMate</h2>
-        </div>
-     </div>
-     <div class="flex main">
-        <div id="text">
-            <div class="textarea-container">
-                <div class="row-numbers">
-                  <span>1</span>
-                  <span>2</span>
-                  <span>3</span>
-                  <span>4</span>
-                  <span>5</span>
-                  <span>6</span>
-                  <span>7</span>
-                  <span>8</span>
-                  <span>9</span>
-                  <span>10</span>
-                  <span>11</span>
-                  <span>12</span>
-                  <span>13</span>
-                  <span>14</span>
-                  <span>15</span>
-                  <span>16</span>
-                  <span>17</span>
-                  <span>18</span>
-                  <span>19</span>
-                  <span>20</span>
-                  <span>21</span>
-                  <span>22</span>
-                  <span>23</span>
-                  <span>24</span>
-                  <span>25</span>
-                  <!-- Add more span elements for additional rows as needed -->
+    <nav>
+    <img src="../textmate-logo.png" alt="logo">
+    <div class="anchor">
+        <a href="about.html">About Us</a><a href="products.html">Our Products</a><a href="contact.html">Contact
+            Us</a>
+        <a id="userLogin" href="login.html">Login</a>
+    </div>
+
+    </nav>
+     <div id="mainContaint" style="display: none;">
+        <div class="flex details">
+            <div class="flex roomDetails">
+                <h1>Room Name <span></span></h1>
+                <h3>Total users <span>0</span></h3>
+            </div>
+            <div id="alert">
+                <h2 id="typewriter">Welcome to TextMate</h2>
+            </div>
+         </div>
+         <div class="flex main">
+            <div id="text">
+                <div class="textarea-container">
+                    <div class="row-numbers">
+                      <span>1</span>
+                      <span>2</span>
+                      <span>3</span>
+                      <span>4</span>
+                      <span>5</span>
+                      <span>6</span>
+                      <span>7</span>
+                      <span>8</span>
+                      <span>9</span>
+                      <span>10</span>
+                      <span>11</span>
+                      <span>12</span>
+                      <span>13</span>
+                      <span>14</span>
+                      <span>15</span>
+                      <span>16</span>
+                      <span>17</span>
+                      <span>18</span>
+                      <span>19</span>
+                      <span>20</span>
+                      <span>21</span>
+                      <span>22</span>
+                      <span>23</span>
+                      <span>24</span>
+                      <span>25</span>
+                      <!-- Add more span elements for additional rows as needed -->
+                    </div>
+                    <textarea value=""></textarea>
                 </div>
-                <textarea value=""></textarea>
+                <div class="flex extraDetails">
+                    <h4></h4>
+                    <h5></h5>
+                </div>
+                
             </div>
-            <div class="flex extraDetails">
-                <h4></h4>
-                <h5></h5>
-            </div>
-            
-        </div>
-        <div>
-            <select name="language" id="">
-                <option value="">Plaintext</option>
-            </select>
-            <div id="users">
-                <div class="flex">
-                    <h2>Users</h2>
-                    <div>
-                        <img src="../images/mic-off.svg" alt="" onclick="micOn()" id="micOff">
-                        <img src="../images/mic.svg" alt="" onclick="micOff()" id="micOn">
-                        <img src="../images/leave.svg" alt="" onclick="window.location.href='../index.html'">
+            <div id="rightDiv">
+                <button id="invite-btn"><span>Invite TeamMates</span><ion-icon name="share-social-outline"></ion-icon></button>
+                <div id="users">
+                    <div class="flex">
+                        <h2>Users</h2>
+                        <audio id="localAudio" crossOrigin="anonymous" autoplay></audio>
+    
+                        <audio id="remoteAudio" autoplay></audio>
+                        <div>
+                            <img src="../images/mic-off.svg" alt="" onclick="micOn()" id="micOff">
+                            <img src="../images/mic.svg" alt="" onclick="micOff()" id="micOn">
+                            <img src="../images/leave.svg" alt="" onclick="feedback()">
+                        </div>
+                    </div>
+                    <div id="allUsers">
+                        <!-- <div>
+                            <h1>A</h1>
+                            <p>Ashik</p>
+                        </div> -->
                     </div>
                 </div>
-                <div id="allUsers">
-                    <!-- <div>
-                        <h1>A</h1>
-                        <p>Ashik</p>
-                    </div> -->
+                <div id="chat">
+                    <h2>Chats</h2>
+                    <div id="allChats"></div>
+                    <input type="text" placeholder="Type a message"><ion-icon name="send"></ion-icon>
                 </div>
+                
+            </div> 
+            <div id="inviteDiv" style="display: none;">
+                <input type="text" placeholder="Enter User Name">
+                <div id="invUsers">
+                    <div class="flex">
+                        <p>Ashiqur Rahaman</p>
+                        <p onclick="send('Ashiqur Rahaman')">Send</p>
+                    </div>
+                </div>
+                <div id="icon">
+                    <img src="../images/link.png" alt="" id="copyLink">
+                    <img src="../images/whatsapp.png" alt="">
+                    <img src="../images/messenger.png" alt="">
+                    <img src="../images/telegram.png" alt="">
+                    <img src="../images/gmail.png" alt="">
+                </div>
+                <button id="done-btn">Done</button>
             </div>
-            <div id="chat">
-                <h2>Chats</h2>
-                <div id="allChats"></div>
-                <input type="text">
+         </div>
+     </div>
+     <div id="form">
+        <div><img src="../images/improve.png" alt=""></div>
+        <div>
+            <div id="formDiv">
+                <p id="clock"></p>
+                <div id="top">
+                    <h3 id="join" class="curr">Join Room</h3>
+                    <h3 id="create">Create Room</h3>
+                </div>
+                <form action="" id="join-form">
+                    <input type="text" placeholder="Enter Room Name" name="room">
+                    <input type="password" placeholder="Enter Room Password">
+                    <button id="join-btn">Join Room</button>
+                </form>
+                <form action="" style="display: none;" id="create-form">
+                    <input type="text" placeholder="Create Room Name">
+                    <input type="password" placeholder="Create Room Password">
+                    <button id="create-btn">Create Room</button>
+                </form>
             </div>
-            <!-- <button>Leave Room</button> -->
         </div>
      </div>
-     
+     <div id="feedback" style="display: none;">
+        <div class="timer"><h3>Auto return to home in <span id="timer">1:00</span></h3></div>
+        <div>
+            <div>
+                <h2>You left the meeting</h2>
+                <div>
+                    <form class="fr" action="">
+                        <label class="fr__label" for="face-rating"><h2>How was your experience?</h2></label>
+                        <div class="fr__face" role="img" aria-label="Straight face">
+                            <div class="fr__face-right-eye" data-right></div>
+                            <div class="fr__face-left-eye" data-left></div>
+                            <div class="fr__face-mouth-lower" data-mouth-lower></div>
+                            <div class="fr__face-mouth-upper" data-mouth-upper></div>
+                        </div>
+                        <input class="fr__input" id="face-rating" type="range" value="2.5" min="0" max="5" step="0.1">
+                    </form>
+                </div>
+                <button id="submit">Submit feedback</button>
+            </div>
+            <h2> or</h2>
+            <div id="buttonDiv">
+                <button id="rejoin">Re-join room</button>
+                <button id="tohome">Return to home</button>
+            </div>
+        </div>
+     </div>
 </body>
+<script type="module" src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.esm.js"></script>
+<script nomodule src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.js"></script>
 <script src="https://cdn.socket.io/4.6.0/socket.io.min.js" integrity="sha384-c79GN5VsunZvi+Q/WObgk2in0CbZsHnjEqvFxC5DxHn9lTfNce2WW6h2pH6u/kF+" crossorigin="anonymous"></script>
 <script src="../scripts/chat.js"></script>
 </html>

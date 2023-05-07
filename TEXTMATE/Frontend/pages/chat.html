@@ -21,7 +21,7 @@
 
     </nav>
      <div id="mainContaint" style="display: none;">
-        <div class="flex">
+        <div class="flex details">
             <div class="flex roomDetails">
                 <h1>Room Name <span></span></h1>
                 <h3>Total users <span>0</span></h3>
@@ -69,7 +69,7 @@
                 </div>
                 
             </div>
-            <div id="rightDiv" style="display: block;">
+            <div id="rightDiv">
                 <button id="invite-btn"><span>Invite TeamMates</span><ion-icon name="share-social-outline"></ion-icon></button>
                 <div id="users">
                     <div class="flex">
@@ -80,7 +80,7 @@
                         <div>
                             <img src="../images/mic-off.svg" alt="" onclick="micOn()" id="micOff">
                             <img src="../images/mic.svg" alt="" onclick="micOff()" id="micOn">
-                            <img src="../images/leave.svg" alt="" onclick="window.location.href='../index.html'">
+                            <img src="../images/leave.svg" alt="" onclick="feedback()">
                         </div>
                     </div>
                     <div id="allUsers">
@@ -135,6 +135,32 @@
                     <input type="password" placeholder="Create Room Password">
                     <button id="create-btn">Create Room</button>
                 </form>
+            </div>
+        </div>
+     </div>
+     <div id="feedback" style="display: none;">
+        <div class="timer"><h3>Auto return to home in <span id="timer">1:00</span></h3></div>
+        <div>
+            <div>
+                <h2>You left the meeting</h2>
+                <div>
+                    <form class="fr" action="">
+                        <label class="fr__label" for="face-rating"><h2>How was your experience?</h2></label>
+                        <div class="fr__face" role="img" aria-label="Straight face">
+                            <div class="fr__face-right-eye" data-right></div>
+                            <div class="fr__face-left-eye" data-left></div>
+                            <div class="fr__face-mouth-lower" data-mouth-lower></div>
+                            <div class="fr__face-mouth-upper" data-mouth-upper></div>
+                        </div>
+                        <input class="fr__input" id="face-rating" type="range" value="2.5" min="0" max="5" step="0.1">
+                    </form>
+                </div>
+                <button id="submit">Submit feedback</button>
+            </div>
+            <h2> or</h2>
+            <div id="buttonDiv">
+                <button id="rejoin">Re-join room</button>
+                <button id="tohome">Return to home</button>
             </div>
         </div>
      </div>

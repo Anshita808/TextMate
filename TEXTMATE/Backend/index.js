@@ -4,7 +4,10 @@ const socketio = require('socket.io')
 const { userJoin, getRoomUsers, getCurrentUser, userLeave, formateMessage} = require('./users')
 const mongoose = require("mongoose")
 const { userRouter } = require('./routes/user.route')
+const { paymentRouter } = require('./routes/payment.route')
+const cors=require('cors')
 require("dotenv").config()
+
 
 const app = express()
 app.use(express.json())
@@ -14,7 +17,8 @@ const io = socketio(server)
 app.use(cors())
 
 
-app.use("/user",userRouter)
+app.use("/user",userRouter);
+app.use("/payment",paymentRouter)
 
 io.on('connection', (socket) => {
   socket.on('joinRoom', ({ username, room }) => {

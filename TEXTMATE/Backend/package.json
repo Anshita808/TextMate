@@ -11,13 +11,20 @@
   "author": "",
   "license": "ISC",
   "dependencies": {
+    "@sendgrid/mail": "^7.7.0",
     "bcrypt": "^5.1.0",
+    "cors": "^2.8.5",
     "dotenv": "^16.0.3",
     "express": "^4.18.2",
+    "express-session": "^1.17.3",
     "jsonwebtoken": "^9.0.0",
+    "mailgun-js": "^0.22.0",
     "moment": "^2.29.4",
     "mongoose": "^7.1.0",
+    "nodemailer": "^6.9.1",
     "nodemon": "^2.0.22",
+    "passport": "^0.6.0",
+    "passport-github2": "^0.1.12",
     "socket.io": "^4.6.1"
   }
 }

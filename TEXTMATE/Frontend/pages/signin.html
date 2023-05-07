@@ -5,11 +5,11 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>TextMate - Sign Up</title>
-    <link rel="stylesheet" href="/style/signin.css">
+    <link rel="stylesheet" href="../style/signin.css">
 </head>
 <body>
     <div class="main">
-        <a href="/index.html"><img id="logo" src="/textmate-logo.png" alt=""></a>
+        <a href="/index.html"><img id="logo" src="../images/textmate-logo.png" alt=""></a>
         <div class="form-box">
             <div class="button-box">
                 <div id="btn"></div>
@@ -21,9 +21,14 @@
                 required>
                 <input id="signin-password" type="password" class="input-field" placeholder="Enter Password"
                 required>
+                <input type="checkbox" name="" id="" placeholder="" class="checkbox"><span class="spans">Remember Me</span>
                 <button id="signin-btn" type="submit" class="submit-btn">Sign In</button>
-                <button id="google-auth-btn" type="submit" class="submit-btn">Sign In with <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSWWrbOs43M4fXH4Nf6oEpESmrmx79N9tqHFQ&usqp=CAU" alt=""></button>
-                <button id="github-auth-btn" type="submit" class="submit-btn">Sign In with <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQJGtP-Pq0P67Ptyv3tB7Zn2ZYPIT-lPGI7AA&usqp=CAU" alt=""></button>
+                <p>Or</p>
+                <p>Sign In with </p>
+                <div>
+                    <button id="google-auth-btn" type="submit" class="submit-btn"><img src="../images/google.png" alt=""> Google</button>
+                    <button id="github-auth-btn" type="submit" class="submit-btn"><img src="../images/github.png" alt=""> Github</button>
+                </div>
             </form>
             <form id="signup" class="input-group">
                 <input id="signup-name" type="text" class="input-field" placeholder="Full Name"
@@ -33,10 +38,17 @@
                 <input id="signup-password" type="password" class="input-field" placeholder="Enter Password"
                 required>
                 <input type="checkbox" class="checkbox"><span class="spans">I agree to the <a href="#">Term of Use</a> and <a href="#">Privacy Policy</a>.</span>
-                <button id="signup-btn" type="submit" class="submit-btn">Sign Up</button>
+
+                <button id="signup-btn" type="submit" class="submit-btn"><p>Sign Up</p></button>
+                <p>Or</p>
+                <p>Sign Up with </p>
+                <div>
+                    <button id="google-auth-btn" type="submit" class="submit-btn"><img src="../images/google.png" alt=""> Google</button>
+                    <button id="github-auth-btn" type="submit" class="submit-btn"><img src="../images/github.png" alt=""> Github</button>
+                </div>
             </form>
         </div>
     </div>
 </body>
 </html>
-<script src="/scripts/signin.js"></script>
+<script src="../scripts/signin.js"></script>

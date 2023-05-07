@@ -17,11 +17,11 @@
                 <button type="button" class="toggle-btn" onclick="signup()">Sign Up</button>
             </div>
             <form id="signin" class="input-group">
-                <input id="signin-email" type="text" class="input-field" placeholder="Email ID"
-                required>
-                <input id="signin-password" type="password" class="input-field" placeholder="Enter Password"
-                required>
-                <input type="checkbox" name="" id="" placeholder="" class="checkbox"><span class="spans">Remember Me</span>
+                <input id="signin-email" type="text" class="input-field" placeholder="Email ID" required>
+                <span id="forEmail1" style="visibility: hidden;">please enter a valid email</span>
+                <input id="signin-password" type="password" class="input-field" placeholder="Enter Password" required>
+                <span id="forPassword1" style="visibility: hidden;">please enter correct password</span><br>
+                <input type="checkbox" name="" id="" placeholder="" class="checkbox" checked><span class="spans">Remember Me</span>
                 <button id="signin-btn" type="submit" class="submit-btn">Sign In</button>
                 <p>Or</p>
                 <p>Sign In with </p>
@@ -31,13 +31,12 @@
                 </div>
             </form>
             <form id="signup" class="input-group">
-                <input id="signup-name" type="text" class="input-field" placeholder="Full Name"
-                required>
-                <input id="signup-email" type="email" class="input-field" placeholder="Email ID"
-                required>
-                <input id="signup-password" type="password" class="input-field" placeholder="Enter Password"
-                required>
-                <input type="checkbox" class="checkbox"><span class="spans">I agree to the <a href="#">Term of Use</a> and <a href="#">Privacy Policy</a>.</span>
+                <input id="signup-name" type="text" class="input-field" placeholder="Full Name" required>
+                <input id="signup-email" type="email" class="input-field" placeholder="Email ID" required>
+                <span id="forEmail2" style="visibility: hidden;">please enter a valid email</span>
+                <input id="signup-password" type="password" class="input-field" placeholder="Enter Password" required>
+                <span id="forPassword" style="visibility: hidden;">please create a strong password</span><br>
+                <input type="checkbox" class="checkbox" checked><span class="spans">I agree to the <a href="#">Term of Use</a> and <a href="#">Privacy Policy</a>.</span>
 
                 <button id="signup-btn" type="submit" class="submit-btn"><p>Sign Up</p></button>
                 <p>Or</p>
@@ -49,6 +48,9 @@
             </form>
         </div>
     </div>
+   
 </body>
 </html>
+<script type="module" src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.esm.js"></script>
+<script nomodule src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.js"></script>
 <script src="../scripts/signin.js"></script>

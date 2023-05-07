@@ -3,8 +3,15 @@ const http = require('http')
 const socketio = require('socket.io')
 const cors=require('cors')
 const { userJoin, getRoomUsers, getCurrentUser, userLeave, formateMessage} = require('./users')
-const userRouter=require("./routes/user.route")
+
+const { userRouter } = require('./routes/user.route')
+const { paymentRouter } = require('./routes/payment.route')
+const cors=require('cors')
+require("dotenv").config()
+
 const handlebars = require("express-handlebars");
+
+
 
 const app = express()
 const server = http.createServer(app)
@@ -22,7 +29,8 @@ app.set("view engine", "handlebars");
 app.use("/files", express.static("public")); 
 
 
-app.use("/user",userRouter)
+app.use("/user",userRouter);
+app.use("/payment",paymentRouter)
 
 io.on('connection', (socket) => {
   const socketId = socket.id;

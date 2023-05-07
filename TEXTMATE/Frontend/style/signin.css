@@ -6,7 +6,7 @@
 .main{
     height: 100%;
     width: 100%;
-    background-image: linear-gradient(rgba(0,0,0,0.4),rgba(0,0,0,0.4)),url(/images/Background.jpg);
+    background-image: linear-gradient(rgba(0,0,0,0.4),rgba(0,0,0,0.4)),url("../images/Background.jpg");
     background-position: center;
     background-size: cover;
     position: absolute;
@@ -21,12 +21,12 @@
 
 .form-box{
     width: 420px;
-    height: 480px;
+    height: 580px;
     position: relative;
     background-color: #ffffffe3;
     backdrop-filter: blur(33px);
 	background-blend-mode: overlay;
-    margin: 6% auto;
+    margin: auto;
     border-radius: 30px;
     padding: 5px;
     overflow: hidden;
@@ -52,7 +52,7 @@
     position: absolute;
     width: 110px;
     height: 40px;
-    background: linear-gradient(to right, #396aab,#035fd8);
+    background: linear-gradient(to left, #8bb7f1,#316380);
     border-radius: 30px;
     transition: .5s;
 }
@@ -73,23 +73,37 @@
     outline: none;
     background: transparent;
 }
+span{
+    font-size: 13px;
+}
+#signin-btn,#signup-btn{
+    margin-top: 30px;
+    margin-bottom: 10px;
+}
+p{
+    text-align: center;
+}
 .submit-btn{
-    width: 85%;
+    width: 95%;
+    height: 45px;
     padding: 10px 30px;
     cursor: pointer;
     display: block;
     margin: auto;
     margin-top: 5px;
-    background: linear-gradient(to right, #396aab,#035fd8);
+    background: linear-gradient(to left, #8bb7f1,#4182a8);
     border: 0;
     outline: none;
-    border-radius: 30px;
-    color: #fff;
-    font-weight: bolder;
+    border-radius: 15px;
+    color: #ffffff;
+    font-size: 16px;
+    font-weight: 600;
 }
 .submit-btn img{
-    height: 20px;
-    width: 20px;
+    position: absolute;
+    margin-top: -7px;
+    margin-left: -50px;
+    width: 9%;
     border-radius: 15px;
 }
 .submit-btn:hover{
@@ -98,13 +112,13 @@
     outline: 2px solid #035fd8;
 }
 .checkbox{
-    margin: 30px 10px 30px 0;
+    position: relative;
+    top: 2px;
 }
 .spans{
-    color: #777;
+    color: #242424;
     font-size: 12px;
-    bottom: 64px;
-    position: absolute;
+    margin-left: 5px;
 }
 #signin{
     left: 50px;

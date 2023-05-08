@@ -20,7 +20,7 @@ const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]{2,3}$/;
 const passwordRegex = /^(?=.*[a-z])(?=.*[A-Z])(?=.*\d)[a-zA-Z\d]{8,}$/
 
 
-const popup = document.getElementById("popup")
+var popup = document.getElementById("popup")
 
 // scripts for sign up
 let emailS = document.getElementById('signup-email');

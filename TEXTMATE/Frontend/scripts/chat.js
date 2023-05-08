@@ -1,4 +1,4 @@
-const socket = io("http://localhost:8080/",{transports:["websocket"]});
+const socket = io("textmate-production.up.railway.app/",{transports:["websocket"]});
     const roomName=document.querySelector("h1>span")
     const total=document.querySelector("h3>span")
     const userList=document.querySelector("#allUsers")
@@ -77,26 +77,25 @@ const socket = io("http://localhost:8080/",{transports:["websocket"]});
             roomType:userInfo.type,
             data:""
         }
+        console.log(roomdetails)
         //create room
-        fetch("https://elated-polo-shirt-clam.cyclic.app/rooms/create",{
-            method: "POST",
-            headers: {
-                "Content-Type": "application/json"
-            },
-            body: JSON.stringify(roomdetails)
+        fetch("https://elated-polo-shirt-clam.cyclic.app/rooms/create", {
+        method: "POST",
+        headers: {
+            "Content-Type": "application/json"
+        },
+        body: JSON.stringify(roomdetails)
         })
-        .then(res=>{
-            res.json()
+        .then(data => {
+        console.log(data);
+        socket.emit('joinRoom', {username, room});
+        document.getElementById("mainContaint").style.display = "block";
+        document.getElementById("form").style.display = "none";
         })
-        .then(data=>{
-            console.log(data)
-            socket.emit('joinRoom', {username,room});
-            document.getElementById("mainContaint").style.display="block"
-            document.getElementById("form").style.display="none"
-        })
-        .catch(err=>{
-            console.log(err)
-        })
+        .catch(err => {
+        console.log(err);
+        });
+
     })
     
     const userStatus = {

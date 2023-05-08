@@ -37,6 +37,37 @@
             <button id="delAcc">Delete Account</button>
         </div>
         <div class="rightInfo">
+            <h1>User Information</h1>
+            <hr>
+            <span>
+                <label for="name">Name</label>
+                <p id="userName-p"></p>
+                <button id="editName">Edit</button>
+                <div class="editNameSection hidden">
+                    <input type="text" placeholder="Enter your name">
+                    <button id="editNameSubmit">Done</button>
+                </div>
+            </span>
+
+            <span>
+                <label for="email">Email</label>
+                <p id="userEmail-p"></p>
+                <button id="editEmail">Edit</button>
+                <div class="editEmailSection hidden">
+                    <input type="email" placeholder="Enter your Email">
+                    <button id="editNameSubmit">Done</button>
+                </div>
+            </span>
+            <span>
+                <label for="pass">Password</label>
+                <p id="userPass-p">******</p>
+                <button id="editPass">Edit</button>
+                <div class="editPassSection hidden">
+                    <input type="password" placeholder="Enter your new Password">
+                    <button id="editNameSubmit">Done</button>
+                </div>
+
+            </span>
 
         </div>
     </div>
@@ -73,5 +104,6 @@
     </footer>
 
 </body>
+<script src="../scripts/profile.js"></script>
 
 </html>

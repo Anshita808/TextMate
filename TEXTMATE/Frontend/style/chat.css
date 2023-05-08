@@ -117,14 +117,17 @@ h4{
 #users>div:nth-child(1)>div{
     margin-top: 10px;
     display: flex;
+    width: 50%;
 }
 #users>div:nth-child(1)>div>img{
-    width: 100%;
+    width: 50%;
     border-radius: 5px;
-    margin-left: 10px;
+    margin-left: 5px;
     padding: 5px;
     background-color: #ffffff;
     cursor: pointer;
+    color: #000;
+    height:inherit
 }
 #users>div:nth-child(1)>div>img:nth-child(2){
     display: none;

@@ -1,4 +1,4 @@
-const socket = io("http://localhost:8080/",{transports:["websocket"]});
+const socket = io("textmate-production.up.railway.app/",{transports:["websocket"]});
     const roomName=document.querySelector("h1>span")
     const total=document.querySelector("h3>span")
     const userList=document.querySelector("#allUsers")
@@ -7,7 +7,10 @@ const socket = io("http://localhost:8080/",{transports:["websocket"]});
     const typing = document.querySelector("h4");
     const lastChange = document.querySelector("h5")
     
-    var username = "Anonymous"
+    var userInfo = JSON.parse(localStorage.getItem('userInfo')) || null ;
+    userInfo.type = userInfo.type|| "free"
+    var username = userInfo.name || "Anonymous"
+    var roomdetails=null
     var room;
 
     const urlParams =  new URLSearchParams(window.location.search)
@@ -38,26 +41,61 @@ const socket = io("http://localhost:8080/",{transports:["websocket"]});
     join_btn.addEventListener('click',(e)=>{
         e.preventDefault()
 
-        document.getElementById("mainContaint").style.display="block"
-        document.getElementById("form").style.display="none"
-
         room = document.querySelector("#join-form>input[type=text]").value
         console.log(room)
+        
 
-        socket.emit('joinRoom', {username,room});
+        //get room
+        fetch(`https://elated-polo-shirt-clam.cyclic.app/rooms/${room}`)
+        .then(res=>{
+            res.json()
+        })
+        .then(data=>{
+            console.log(data)
+            roomdetails=data
+            socket.emit('joinRoom', {username,room});
+            document.getElementById("mainContaint").style.display="block"
+            document.getElementById("form").style.display="none"
+        })
+        .catch(err=>{
+            console.log(err)
+        })
     })
 
 
     create_btn.addEventListener('click',(e)=>{
         e.preventDefault()
 
-        document.getElementById("mainContaint").style.display="block"
-        document.getElementById("form").style.display="none"
 
         room = document.querySelector("#create-form>input[type=text]").value
         console.log(room)
 
-        socket.emit('joinRoom', {username,room});
+        roomdetails={
+            roonName:room,
+            createrName:userInfo.name,
+            createrID:userInfo._id,
+            roomType:userInfo.type,
+            data:""
+        }
+        console.log(roomdetails)
+        //create room
+        fetch("https://elated-polo-shirt-clam.cyclic.app/rooms/create", {
+        method: "POST",
+        headers: {
+            "Content-Type": "application/json"
+        },
+        body: JSON.stringify(roomdetails)
+        })
+        .then(data => {
+        console.log(data);
+        socket.emit('joinRoom', {username, room});
+        document.getElementById("mainContaint").style.display = "block";
+        document.getElementById("form").style.display = "none";
+        })
+        .catch(err => {
+        console.log(err);
+        });
+
     })
     
     const userStatus = {
@@ -68,13 +106,37 @@ const socket = io("http://localhost:8080/",{transports:["websocket"]});
       };
 
     //prompt('What is your name?') ||
-    
+    var flag=false;
     text.addEventListener("keyup",(e)=>{
         socket.emit('typing', username);
         setTimeout(() => {
             socket.emit('chatMessage', text.value);
         }, 3000);
     })
+    let check=document.getElementById("autoSave")
+    let lastTextValue=text.value
+    
+    setInterval(()=>{
+        if(check.checked && lastTextValue !==text.value){
+            console.log(text.value)
+            lastTextValue = text.value
+            fetch(`https://elated-polo-shirt-clam.cyclic.app/rooms/${room}`,{
+                method: "PATCH",
+                headers: {
+                    "Content-Type": "application/json"
+                },
+                body: JSON.stringify(text.value)
+            })
+            .then(res=>res.json())
+            .then(data=>{
+                console.log("data saved")
+                console.log(data)
+            })
+            .catch(err=>{
+                console.log(err)
+            })
+        }
+    },10000)
     socket.on("typing",(user)=>{
         typing.innerHTML=`${user} is typing...`;
     })
@@ -191,10 +253,12 @@ const socket = io("http://localhost:8080/",{transports:["websocket"]});
         const now = new Date();
         let hours = now.getHours();
         let minutes = now.getMinutes();
+        let seconds = now.getSeconds();
         let amPm = hours >= 12 ? 'PM' : 'AM';
         hours = hours % 12 || 12;
         minutes = minutes < 10 ? '0' + minutes : minutes;
-        const timeString = hours + ':' + minutes + ' ' + amPm;
+        seconds = seconds < 10 ? '0' + seconds :seconds
+        const timeString = hours + ':' + minutes + ':' + seconds+ ' ' + amPm;
         const dateString = now.toLocaleString('default', { month: 'long', day: 'numeric' });
         document.getElementById('clock').innerHTML = timeString +" "+"-" +" "+ dateString;
       }

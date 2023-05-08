@@ -133,6 +133,10 @@ const socket = io("http://localhost:8080/",{transports:["websocket"]});
     var localStream;
     var remoteStream;
 
+    function videoOn(){
+        typewriter("This feature is currently unavailable")
+    }
+
     function micOff(){
         document.getElementById("micOff").style.display="block"
         document.getElementById("micOn").style.display="none"
@@ -211,12 +215,12 @@ const socket = io("http://localhost:8080/",{transports:["websocket"]});
       function send(Name){
         console.log(Name)
         document.querySelector("#invUsers>div>p:nth-child(2)").innerHTML=`Invite Sent`
-        let text= `Chat AI :- Invite sent to ${Name}`
+        let text= `TextMate Bot :- Invite sent to ${Name}`
         if(!inviteArray.includes(Name)){
             inviteArray.push(Name)
             typewriter(text)
         }else{
-            text=`Chat AI :- Invite already sent to ${Name}`
+            text=`TextMate Bot :- Invite already sent to ${Name}`
             typewriter(text)
         }
       }
@@ -226,9 +230,9 @@ const socket = io("http://localhost:8080/",{transports:["websocket"]});
         link+=`?room=${room}&pass=${username}`
         
         navigator.clipboard.writeText(link).then(function() {
-            typewriter('Chat AI :- Link copied');
+            typewriter('TextMate Bot :- Link copied');
         }, function() {
-            typewriter('Chat AI :- Failed to copy link');
+            typewriter('TextMate Bot :- Failed to copy link');
         });
       });
 

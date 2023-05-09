@@ -196,7 +196,7 @@ body {
     color: #06d755;
 }
 
-#ban-user{
+.ban-user{
     width: 100px;
     height: 40px;
     background-color: rgb(255, 255, 255);
@@ -208,7 +208,7 @@ body {
     cursor: pointer;
 }
 
-#ban-user:hover{
+.ban-user:hover{
     color: #ffffff;
     background-color: #ff0000;
 }

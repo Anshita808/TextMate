@@ -128,10 +128,25 @@ nav img {
 
 /* Right Side */
 .rightInfo {
+    padding: 0px 10px;
     margin: auto;
     height: 100%;
     display: flex;
     flex-direction: column;
+    overflow: auto;
+    overflow-y: scroll;
+}
+.rightInfo::-webkit-scrollbar{
+    display: none;
+    width: 1px;
+    background-color: #ffffff;
+}
+.rightInfo:hover::-webkit-scrollbar{
+    display: block;
+}
+.rightInfo::-webkit-scrollbar-thumb{
+    background-color: #000000;
+    border-radius: 10px;
 }
 .rightInfo>span{
     margin-top: 50px;
@@ -144,6 +159,7 @@ nav img {
 .rightInfo>span>label{
     font-weight: bolder;
     border-bottom: 2px solid grey;
+    align-self: baseline;
 }
 .rightInfo>span>span{
     width: 300px;
@@ -162,6 +178,28 @@ nav img {
 }
 .hidden{
     display: none;
+}
+
+.editNameSection>input,.editEmailSection>input,.editPassSection>input{
+    position: relative;
+    left: -60px;
+    width: 100%;
+    padding: 5px 10px;
+    background-color: transparent;
+    color: #000;
+    outline: none;
+    border: 0px;
+    border-bottom: 2px solid ;
+}
+.editNameSection>button,.editEmailSection>button,.editPassSection>button{
+    display: block;
+    position: relative;
+    top: -33px;
+    left: 177px;
+    padding: 5px 10px;
+    background-color: transparent ;
+    border-radius: 8px;
+    font-weight: bolder;
 }
 
 

@@ -29,3 +29,5 @@ window.addEventListener("load", () => {
 	nameP.textContent = userInfo.name || "John Doe";
 	email.textContent = userInfo.email || "doejohn@gmail.com";
 });
+
+

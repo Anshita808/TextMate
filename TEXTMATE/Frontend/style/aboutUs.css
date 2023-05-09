@@ -229,3 +229,16 @@ footer>div>div img:hover {
     width: 150px;
     border-radius: 50%;
 }
+
+body::-webkit-scrollbar{
+    display: none;
+    width: 3px;
+    background-color: #000000;
+}
+body:hover::-webkit-scrollbar{
+    display: block;
+}
+body::-webkit-scrollbar-thumb{
+    background-color: #ffffff;
+    border-radius: 10px;
+}

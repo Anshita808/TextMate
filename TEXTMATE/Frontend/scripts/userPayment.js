@@ -33,9 +33,13 @@ var popup = document.getElementById("popup")
                         <p>Verifying Details</p>
                     </div>
                 `
-    
+                let userInfo = JSON.parse(localStorage.getItem('userInfo')) 
+                if(userInfo){
+                    userInfo.type=document.getElementById("plan").value || "pro"
+                }
+                localStorage.setItem("userInfo",JSON.stringify(userInfo))
                setTimeout(()=>{
-               window.location.href="../index.html"
+                window.location.href="../index.html"
                },3000)
                 
             }else{

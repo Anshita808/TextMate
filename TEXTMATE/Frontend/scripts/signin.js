@@ -190,12 +190,47 @@ function loginFunction(){
     .then(res=>res.json())
     .then(res=>{
         localStorage.setItem("token", res.token)
-        localStorage.setItem("userInfo",JSON.stringify(res.user))
-        window.location.href = "../index.html"
+        let user=res.user
+        user.type="free"
+        localStorage.setItem("userInfo",JSON.stringify(user))
+        window.location.href = "../pages/payment.html"
     })
     .catch(err=>{
+        console.log(err)
         popup.classList.remove("openpopup")
         document.getElementById('forPassword1').style.visibility="visible";
         document.getElementById('forPassword1').style.color="red";
     })
 }
+
+const showPassword=document.querySelector("#eye>ion-icon:nth-child(2)")
+    const hidePassword=document.querySelector("#eye>ion-icon:nth-child(1)")
+    
+    showPassword.addEventListener('click', function() {
+        document.querySelector("#signin-password").setAttribute('type', 'text');
+
+        showPassword.style.display = 'none';
+        hidePassword.style.display = 'block';
+    })
+    hidePassword.addEventListener('click', function() {
+        document.querySelector("#signin-password").setAttribute('type', 'password');
+
+        showPassword.style.display = 'block';
+        hidePassword.style.display = 'none';
+    })
+
+    const show=document.querySelector("#show")
+    const hide=document.querySelector("#hide")
+    
+    show.addEventListener('click', function() {
+        document.querySelector("#signup-password").setAttribute('type', 'text');
+
+        show.style.display = 'none';
+        hide.style.display = 'block';
+    })
+    hide.addEventListener('click', function() {
+        document.querySelector("#signup-password").setAttribute('type', 'password');
+
+        show.style.display = 'block';
+        hide.style.display = 'none';
+    })

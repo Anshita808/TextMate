@@ -6,6 +6,7 @@
 .main{
     height: 100%;
     width: 100%;
+    padding-bottom: 30px;
     background-image: linear-gradient(rgba(0,0,0,0.4),rgba(0,0,0,0.4)),url("../images/Background.jpg");
     background-position: center;
     background-size: cover;
@@ -21,7 +22,7 @@
 
 .form-box{
     width: 420px;
-    height: 580px;
+    height: 650px;
     position: relative;
     background-color: #ffffffe3;
     backdrop-filter: blur(33px);
@@ -220,6 +221,22 @@ input[type=number]::-webkit-outer-spin-button {
     font-size: 50px;
     color: white;
   }
+  
+  #eye{
+    position: relative;
+    top: -35px;
+    left: 90%;
+    width: 25px;
+}
+#eye>ion-icon{
+    display: block;
+    width: 25px;
+    height: 25px;
+    cursor: pointer;
+}
+#eye>ion-icon:nth-child(1){
+    display: none;
+}
 
   /* for lerger screen */
 @media (min-width:1585px) {

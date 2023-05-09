@@ -9,7 +9,7 @@
 </head>
 <body>
     <div class="main">
-        <a href="/index.html"><img id="logo" src="../images/textmate-logo.png" alt=""></a>
+        <img id="logo" src="../images/textmate-logo.png" alt="" onclick="window.location.href='../index.html'">
         <div class="form-box">
             <div class="button-box">
                 <div id="btn"></div>
@@ -43,7 +43,7 @@
                     <ion-icon name="eye-off-outline" id="hide"></ion-icon>
                     <ion-icon name="eye-outline" id="show"></ion-icon>
                 </div>
-                <span id="forPassword" style="visibility: hidden;">please create a strong password</span><br>
+                <span id="forPassword" style="visibility: hidden;">password must contain at least 8 characters <br> including upper,lowercase and numbers</span><br>
                 <input type="checkbox" class="checkbox" checked><span class="spans">I agree to the <a href="#">Term of Use</a> and <a href="#">Privacy Policy</a>.</span>
 
                 <button id="signup-btn" type="submit" class="submit-btn"><p>Sign Up</p></button>

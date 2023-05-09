@@ -205,9 +205,10 @@ if(userInfo){
         let html=""
         users.forEach(user => {
             let firstLetter = user.username.toUpperCase()[0]
+            let userName = user.username.split(' ')[0]
             html+=`<div>
                         <h1 id="${user.username}">${firstLetter}</h1>
-                        <p>${user.username}</p>
+                        <p>${userName}</p>
                     </div>`
         });
         userList.innerHTML = html
@@ -217,7 +218,7 @@ if(userInfo){
     var remoteStream;
 
     function videoOn(){
-        typewriter("This feature is currently unavailable")
+        typewriter("TextMate Bot :- This feature is currently unavailable")
     }
 
     function micOff(){

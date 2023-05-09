@@ -7,7 +7,7 @@
     <title>TextMate - Admin</title>
     <!-- jquery -->
     <script src="https://code.jquery.com/jquery-1.10.2.js"></script>
-    <link rel="stylesheet" href="/style/adminpage.css">
+    <link rel="stylesheet" href="../style/adminpage.css">
 </head>
 <body>
     <header></header>
@@ -33,23 +33,13 @@
                             </div>
                             <div class="details" id="create_call">
                                 <div class="listHead">
-                                    <h4>User Count : <span>0</span></h4>
+                                    <h4>User Count : <span id="user-count">0</span></h4>
                                 </div>
                             </div>
                         </div>
                         <label>Users</label>
-                        <div class="block">
-                            <div class="imgbx">
-                                <img src="#">
-                            </div>
-                            <div class="details">
-                                <div class="listHead">
-                                    <h4>#name</h4>
-                                </div>
-                            </div>
-                            <div class="ban">
-                                <button id="ban-user">Block User</button>
-                            </div>
+                        <div id="user-card">
+                            <!-- to be append here -->
                         </div>
                     </div>
                 </div>
@@ -133,3 +123,4 @@
         $('header').load('header.html');
     }) 
 </script>
+<script src="../scripts/adminpage.js"></script>

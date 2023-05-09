@@ -15,3 +15,25 @@ function reveal() {
 }
 
 document.getElementById("writeUsBtn").addEventListener("click", reveal);
+
+
+let userInfo = JSON.parse(localStorage.getItem('userInfo')) 
+if(userInfo){
+    console.log(userInfo);
+
+    let name = userInfo.name.split(" ")[0];
+    let div = document.getElementById("userLogin")
+    div.innerHTML = name;
+	div.style.color="white"
+
+    div.addEventListener("click" , ()=>{
+        window.location.href ="../pages/profile.html"
+    })
+}else{
+    let div = document.getElementById("userLogin")
+
+    div.addEventListener("click" , ()=>{
+        window.location.href = "../pages/signin.html"
+    })
+
+}

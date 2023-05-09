@@ -30,12 +30,12 @@ if(userInfo){
         window.location.href ="./pages/profile.html"
     })
 }else{
-    let div = document.getElementById("name")
+    let div = document.getElementById("userLogin")
 
     div.addEventListener("click" , ()=>{
         window.location.href = "./pages/signin.html"
     })
-
+	div.style.color="white"
 }
 document.getElementById("signUpBtn").addEventListener("click" , ()=>{
 	if(userInfo){

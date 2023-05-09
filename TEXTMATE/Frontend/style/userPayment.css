@@ -183,3 +183,95 @@ input[type="submit"] {
   outline: none;
   margin-top: 12px;
 }
+
+/*  */
+
+.popup{
+  position: absolute;
+  background-color: rgba(0, 0, 0, 0.315);
+  backdrop-filter: blur(10px);
+  height: 600px;
+  width: 28%;
+  border-radius: 15px ;
+  text-align: center;
+
+  top: 0%;
+  left: 50%;
+  transform: translate(-50% , -50%) scale(0.1);
+  visibility: hidden;
+  transition: transform 0.4s , top 0.4s;
+  border: #e2e2e2 1px solid;
+}
+.openpopup{
+  visibility: visible;
+  top: 56%;
+  transform: translate(-50% , -50%) scale(1);
+}
+.popup>h1{
+  padding-top: 50px;
+  font-family: serif;
+  font-size: 50px;
+  color: white;
+  margin-top: 0px;
+  margin-bottom: 50px;
+}
+.popup h3{
+  font-family: serif;
+  font-size: 30px;
+  color: white;
+  margin-bottom: 50px;
+}
+#otp{
+  font-size: 30px;
+}
+#otpInput input{
+  width: 50px;
+  height: 50px;
+  font-size: 50px;
+  text-align: center;
+  border: 0px;
+  outline: none;
+}
+input[type=number]::-webkit-inner-spin-button,
+input[type=number]::-webkit-outer-spin-button {
+  -webkit-appearance: none;
+  margin: 0;
+}
+#otpButton{
+  width: 30%;
+  height: 40px;
+  cursor: pointer;
+  box-shadow: rgba(149, 157, 165, 0.2) 0px 8px 24px;
+  border-radius: 5px;
+  text-align: center;
+  margin: auto;
+  margin-top: 20px;
+}
+
+.popup-open {
+  backdrop-filter: blur(55px);
+}
+
+.loading {
+  position: relative;
+  margin: auto;
+  margin-top: 40%;
+  width: 50px;
+  height: 50px;
+  border-radius: 50%;
+  border: 4px dotted #111111 ;
+  border-top-color: #16161649;
+  border-right-color: #00000091;
+  border-left-color: #ffffff25;
+  border-width: 10px;
+  animation: spin 1s ease-in-out infinite;
+}
+
+@keyframes spin {
+  to { transform: rotate(360deg); }
+}
+#load>p{
+  position: relative;
+  font-size: 50px;
+  color: white;
+}

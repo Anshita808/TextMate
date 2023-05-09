@@ -134,11 +134,28 @@ nav img {
     flex-direction: column;
 }
 .rightInfo>span{
-    margin-top: 20px;
+    margin-top: 50px;
+    /* margin-top: 20px; */
     display: flex;
     flex-direction: column;
     justify-content: center;
     align-items: center;
+}
+.rightInfo>span>label{
+    font-weight: bolder;
+    border-bottom: 2px solid grey;
+}
+.rightInfo>span>span{
+    width: 300px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+.rightInfo>span>span>button{
+    padding: 5px 20px;
+    background-color: transparent ;
+    border-radius: 8px;
+    font-weight: bolder;
 }
 .active{
     display: block;

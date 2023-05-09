@@ -91,7 +91,7 @@
                       <input required type="number" placeholder="CVV" />
                     </div>
       
-                    <input type="submit" value="Place Order" />
+                    <input  type="button" value="place order" onclick="oderplace()" />
                     <!-- </form> -->
                   </div>
                 </section>
@@ -104,5 +104,20 @@
 
 
         </div>
+
+        <div id="popup" class="popup">
+          <h1>OTP VARIFICATION</h1>
+          <h3>YOUR OTP IS:- <span id="otp">0000</span></h3> 
+          
+          <div id="otpInput">
+              <h3>Enter Your OTP</h3>
+              <input type="number" id="otpInput1">
+              <input type="number" id="otpInput2">
+              <input type="number" id="otpInput3">
+              <input type="number" id="otpInput4">
+          </div>
+          <button id="otpButton">Submit</button>
+      </div>
+     <script src="../scripts/userPayment.js"></script>
 </body>
 </html>

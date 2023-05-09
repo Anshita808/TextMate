@@ -9,7 +9,7 @@
     background-image: linear-gradient(rgba(0,0,0,0.4),rgba(0,0,0,0.4)),url("../images/Background.jpg");
     background-position: center;
     background-size: cover;
-    position: absolute;
+    background-attachment: fixed;
 }
 
 #logo {

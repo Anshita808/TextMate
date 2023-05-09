@@ -15,3 +15,32 @@ function reveal() {
 }
 
 window.addEventListener("scroll", reveal);
+
+let userInfo = JSON.parse(localStorage.getItem('userInfo')) 
+// let userInfo = null
+if(userInfo){
+    console.log(userInfo);
+
+    let name = userInfo.name.split(" ")[0];
+    let div = document.getElementById("userLogin")
+    div.innerHTML = name;
+	div.style.color="white"
+
+    div.addEventListener("click" , ()=>{
+        window.location.href ="./pages/profile.html"
+    })
+}else{
+    let div = document.getElementById("name")
+
+    div.addEventListener("click" , ()=>{
+        window.location.href = "./pages/signin.html"
+    })
+
+}
+document.getElementById("signUpBtn").addEventListener("click" , ()=>{
+	if(userInfo){
+		window.location.href = "./pages/chat.html"
+	}else{
+		window.location.href = "./pages/signin.html"
+	}
+})

@@ -1,4 +1,25 @@
-const socket = io("textmate-production.up.railway.app/",{transports:["websocket"]});
+let userInfo = JSON.parse(localStorage.getItem('userInfo')) 
+// let userInfo = null
+if(userInfo){
+    console.log(userInfo);
+
+    let name = userInfo.name.split(" ")[0];
+    let div = document.getElementById("userLogin")
+    div.innerHTML = name;
+	div.style.color="white"
+
+    div.addEventListener("click" , ()=>{
+        window.location.href ="../pages/profile.html"
+    })
+}else{
+    let div = document.getElementById("name")
+
+    div.addEventListener("click" , ()=>{
+        window.location.href = "../pages/signin.html"
+    })
+
+}
+    const socket = io("http://localhost:8080/",{transports:["websocket"]});
     const roomName=document.querySelector("h1>span")
     const total=document.querySelector("h3>span")
     const userList=document.querySelector("#allUsers")
@@ -7,8 +28,8 @@ const socket = io("textmate-production.up.railway.app/",{transports:["websocket"
     const typing = document.querySelector("h4");
     const lastChange = document.querySelector("h5")
     
-    var userInfo = JSON.parse(localStorage.getItem('userInfo')) || null ;
-    userInfo.type = userInfo.type|| "free"
+    // var userInfo = JSON.parse(localStorage.getItem('userInfo')) || null ;
+    // userInfo.type = userInfo.type|| "free"
     var username = userInfo.name || "Anonymous"
     var roomdetails=null
     var room;

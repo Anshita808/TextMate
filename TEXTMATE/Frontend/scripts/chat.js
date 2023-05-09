@@ -61,6 +61,7 @@ if(userInfo){
 
     join_btn.addEventListener('click',(e)=>{
         e.preventDefault()
+        join_btn.innerHTML=`<div class="lds-ellipsis"><div></div><div></div><div></div><div></div></div>`
 
         room = document.querySelector("#join-form>input[type=text]").value
         console.log(room)
@@ -86,6 +87,7 @@ if(userInfo){
 
     create_btn.addEventListener('click',(e)=>{
         e.preventDefault()
+        create_btn.innerHTML=`<div class="lds-ellipsis"><div></div><div></div><div></div><div></div></div>`
 
 
         room = document.querySelector("#create-form>input[type=text]").value

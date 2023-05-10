@@ -19,7 +19,7 @@ fetch('https://elated-polo-shirt-clam.cyclic.app/users/')
     console.log({'fetch-msg':err.message});
 })
 
-fetchData();
+// fetchData();
 
 function Count(count){
     totalUser.innerText=count

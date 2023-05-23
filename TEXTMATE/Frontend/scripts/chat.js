@@ -315,7 +315,7 @@ if(userInfo){
 
       document.getElementById('copyLink').addEventListener('click', function() {
         let link = window.location.href;
-        link+=`?room=${room}&pass=${username}`
+        link+=`?room=${room}&pass=${username.split(' ')[0]}`
         
         navigator.clipboard.writeText(link).then(function() {
             typewriter('TextMate Bot :- Link copied');

@@ -191,7 +191,7 @@ input[type="submit"] {
   background-color: rgba(0, 0, 0, 0.315);
   backdrop-filter: blur(10px);
   height: 600px;
-  width: 28%;
+  width: 30%;
   border-radius: 15px ;
   text-align: center;
 
@@ -225,8 +225,8 @@ input[type="submit"] {
   font-size: 30px;
 }
 #otpInput input{
-  width: 50px;
-  height: 50px;
+  width: 60px;
+  height: 60px;
   font-size: 50px;
   text-align: center;
   border: 0px;

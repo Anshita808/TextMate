@@ -95,7 +95,7 @@ function singUpFunction(){
         password: passwords.value,
         name: name.value
     }
-    fetch("https://ill-trousers-crab.cyclic.app/users/register",{
+    fetch("http://localhost:8080/user/register",{
         method: "POST",
         headers: {
             "Content-Type": "application/json"
@@ -176,11 +176,12 @@ function loginFunction(){
     let newUser = {
         email: email.value,
         password: password.value
+        
     }
 
     console.log(newUser)
 
-    fetch("https://ill-trousers-crab.cyclic.app/users/login",{
+    fetch("http://localhost:8080/user/login",{
         method: "POST",
         headers: {
             "Content-Type": "application/json"

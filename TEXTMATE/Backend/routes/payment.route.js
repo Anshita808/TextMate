@@ -1,10 +1,10 @@
 const express = require("express");
 const app = express();
 app.use(express.json())
-var mailgun = require('mailgun-js')({
-    apiKey:process.env.mailgun_api_key,
-    domain:process.env.mailgun_domain
-})
+// var mailgun = require('mailgun-js')({
+//     apiKey:process.env.mailgun_api_key,
+//     domain:process.env.mailgun_domain
+// })
 require("dotenv").config()
 
 const paymentRouter = express.Router();

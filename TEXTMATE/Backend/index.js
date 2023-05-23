@@ -3,11 +3,12 @@ const http = require('http')
 const socketio = require('socket.io')
 const cors=require('cors')
 const { userJoin, getRoomUsers, getCurrentUser, userLeave, formateMessage} = require('./users')
-
+const mongoose = require("mongoose");
 const { userRouter } = require('./routes/user.route')
 const { paymentRouter } = require('./routes/payment.route')
-const cors=require('cors')
 require("dotenv").config()
+const {connection} = require("./db/db");
+
 
 const handlebars = require("express-handlebars");
 
@@ -109,7 +110,7 @@ server.listen(8080,async () => {
 
   try {
 
-    await mongoose.connect(process.env.mongoURL)
+    await connection
     console.log("connected to database..")
 
   } catch (error) {

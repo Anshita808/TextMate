@@ -85,7 +85,30 @@ userRouter.get('/', (req, res) => {
 
 
 
-
+/**
+ * @swagger
+ * user/register:
+ *   post:
+ *     summary: User signup
+ *     tags:
+ *       - Auth
+ *     requestBody:
+ *       required: true
+ *       content:
+ *         application/json:
+ *           schema:
+ *             type: object
+ *             properties:
+ *               username:
+ *                 type: string
+ *               password:
+ *                 type: string
+ *     responses:
+ *       201:
+ *         description: Successful signup
+ *       400:
+ *         description: Bad request
+ */
 
 userRouter.post("/register",async (req,res)=>{
 
@@ -109,6 +132,32 @@ userRouter.post("/register",async (req,res)=>{
         res.send({msg:error.msg})
     }
 })
+
+
+/**
+ * @swagger
+ * user/login:
+ *   post:
+ *     summary: User login
+ *     tags:
+ *       - Auth
+ *     requestBody:
+ *       required: true
+ *       content:
+ *         application/json:
+ *           schema:
+ *             type: object
+ *             properties:
+ *               email:
+ *                 type: string
+ *               password:
+ *                 type: string
+ *     responses:
+ *       200:
+ *         description: login successfull
+ *       401:
+ *         description: invalid username or password
+ */
 
 userRouter.post("/login",async (req,res)=>{
 

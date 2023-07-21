@@ -2,11 +2,12 @@ const express = require('express')
 const http = require('http')
 const socketio = require('socket.io')
 const cors=require('cors')
+const mongoose = require("mongoose")
 const { userJoin, getRoomUsers, getCurrentUser, userLeave, formateMessage} = require('./users')
-
+const { specs, swaggerUi } = require('./swagger/swaggerDef');
 const { userRouter } = require('./routes/user.route')
-const { paymentRouter } = require('./routes/payment.route')
-const cors=require('cors')
+// const { paymentRouter } = require('./routes/payment.route')
+
 require("dotenv").config()
 
 const handlebars = require("express-handlebars");
@@ -30,7 +31,7 @@ app.use("/files", express.static("public"));
 
 
 app.use("/user",userRouter);
-app.use("/payment",paymentRouter)
+// app.use("/payment",paymentRouter)
 
 io.on('connection', (socket) => {
   const socketId = socket.id;
@@ -105,6 +106,9 @@ io.on('connection', (socket) => {
 })
 
 
+app.use('/api-docs', swaggerUi.serve, swaggerUi.setup(specs));
+
+
 server.listen(8080,async () => {
 
   try {
@@ -116,5 +120,7 @@ server.listen(8080,async () => {
 
     console.log({msg:error.message})
   }
+
+  console.log("server is running at 8080")
 
 })

@@ -11,9 +11,9 @@ TextMate has been developed with a real-time text editor feature that provides u
 - Audio Call
 
 ## Deployed Link
-- [NetliFy]() 
+- [Vercel](https://text-mate-navy.vercel.app/) 
 
-- [Cyclic]()
+- [Cyclic](https://textmate-backend2.onrender.com/)
 
 ## Tech Stacks
 ![](https://skillicons.dev/icons?i=html,css,js,nodejs,express,mongo )

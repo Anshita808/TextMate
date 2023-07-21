@@ -2,11 +2,14 @@ const express = require('express')
 const http = require('http')
 const socketio = require('socket.io')
 const cors=require('cors')
+const passport = require("passport")
+const mongoose = require("mongoose")
+
 const { userJoin, getRoomUsers, getCurrentUser, userLeave, formateMessage} = require('./users')
 
 const { userRouter } = require('./routes/user.route')
 const { paymentRouter } = require('./routes/payment.route')
-const cors=require('cors')
+// const cors=require('cors')
 require("dotenv").config()
 
 const handlebars = require("express-handlebars");
@@ -22,6 +25,23 @@ app.use(cors())
 const socketsStatus = {};
 
 const customHandlebars = handlebars.create({ layoutsDir: "./views" });
+
+// --------------------------GOAuth------------------------
+
+
+const { googleAuthentication } = require("./middlewares/G_OAuth.js")
+const { CLIENT_RENEG_LIMIT } = require('tls')
+
+
+app.get('/auth/google', passport.authenticate('google', { scope: ['profile', 'email'] }));
+
+
+app.get('/auth/google/callback', passport.authenticate('google', { failureRedirect: '/login', session:false }), googleAuthentication )
+
+
+// --------------------------GOAuth------------------------
+
+
 
 app.engine("handlebars", customHandlebars.engine);
 app.set("view engine", "handlebars");
@@ -116,5 +136,5 @@ server.listen(8080,async () => {
 
     console.log({msg:error.message})
   }
-
+  console.log("Listening at 8080");
 })

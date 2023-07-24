@@ -1,13 +1,15 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>TextMate - Sign Up</title>
-    <link  rel="icon" href="../images/favicon.png" type="images/x-icon">
+    <link rel="icon" href="../images/favicon.png" type="images/x-icon">
     <link rel="stylesheet" href="../style/signin.css">
 </head>
+
 <body>
     <div class="main">
         <img id="logo" src="../images/textmate-logo.png" alt="" onclick="window.location.href='../index.html'">
@@ -18,21 +20,26 @@
                 <button type="button" class="toggle-btn" onclick="signup()">Sign Up</button>
             </div>
             <form id="signin" class="input-group">
-                <input id="signin-email" type="text" class="input-field" placeholder="Email ID" required>
+                <input id="signin-email" type="text" class="input-field" placeholder="Email ID">
                 <span id="forEmail1" style="visibility: hidden;">please enter a valid email</span>
-                <input id="signin-password" type="password" class="input-field" placeholder="Enter Password" required>
+                <input id="signin-password" type="password" class="input-field" placeholder="Enter Password">
                 <div id="eye">
                     <ion-icon name="eye-off-outline"></ion-icon>
                     <ion-icon name="eye-outline"></ion-icon>
                 </div>
                 <span id="forPassword1" style="visibility: hidden;">please enter correct password</span><br>
-                <input type="checkbox" name="" id="" placeholder="" class="checkbox" checked><span class="spans">Remember Me</span>
+                <input type="checkbox" name="" id="" placeholder="" class="checkbox" checked><span
+                    class="spans">Remember Me</span>
                 <button id="signin-btn" type="submit" class="submit-btn">Sign In</button>
                 <p>Or</p>
                 <p>Sign In with </p>
                 <div>
-                    <button id="google-auth-btn" type="submit" class="submit-btn"><img src="../images/google.png" alt=""> Google</button>
-                    <button id="github-auth-btn" type="submit" class="submit-btn"><img src="../images/github.png" alt=""> Github</button>
+
+                    <button id="google-auth-btn" class="submit-btn"><img src="../images/google.png">
+                        Google</button>
+
+                    <button id="github-auth-btn" class="submit-btn"><img src="../images/github.png" alt="">
+                        Github</button>
                 </div>
             </form>
             <form id="signup" class="input-group">
@@ -44,23 +51,29 @@
                     <ion-icon name="eye-off-outline" id="hide"></ion-icon>
                     <ion-icon name="eye-outline" id="show"></ion-icon>
                 </div>
-                <span id="forPassword" style="visibility: hidden;">password must contain at least 8 characters <br> including upper,lowercase and numbers</span><br>
-                <input type="checkbox" class="checkbox" checked><span class="spans">I agree to the <a href="#">Term of Use</a> and <a href="#">Privacy Policy</a>.</span>
+                <span id="forPassword" style="visibility: hidden;">password must contain at least 8 characters <br>
+                    including upper,lowercase and numbers</span><br>
+                <input type="checkbox" class="checkbox" checked><span class="spans">I agree to the <a href="#">Term of
+                        Use</a> and <a href="#">Privacy Policy</a>.</span>
 
-                <button id="signup-btn" type="submit" class="submit-btn"><p>Sign Up</p></button>
+                <button id="signup-btn" type="submit" class="submit-btn">
+                    <p>Sign Up</p>
+                </button>
                 <p>Or</p>
                 <p>Sign Up with </p>
                 <div>
-                    <button id="google-auth-btn" type="submit" class="submit-btn"><img src="../images/google.png" alt=""> Google</button>
-                    <button id="github-auth-btn" type="submit" class="submit-btn"><img src="../images/github.png" alt=""> Github</button>
+                    <button id="google-auth-btn" type="submit" class="submit-btn"><img src="../images/google.png"
+                            alt=""> Google</button>
+                    <button id="github-auth-btn" type="submit" class="submit-btn"><img src="../images/github.png"
+                            alt=""> Github</button>
                 </div>
             </form>
         </div>
     </div>
     <div id="popup" class="popup">
         <h1>OTP VARIFICATION</h1>
-        <h3>YOUR OTP IS:- <span id="otp">0000</span></h3> 
-        
+        <h3>YOUR OTP IS:- <span id="otp">0000</span></h3>
+
         <div id="otpInput">
             <h3>Enter Your OTP</h3>
             <input type="number" id="otpInput1">
@@ -70,8 +83,9 @@
         </div>
         <button id="otpButton">Submit</button>
     </div>
-   
+
 </body>
+
 </html>
 <script type="module" src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.esm.js"></script>
 <script nomodule src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.js"></script>

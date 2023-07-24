@@ -30,4 +30,7 @@ window.addEventListener("load", () => {
 	email.textContent = userInfo.email || "doejohn@gmail.com";
 });
 
-
+document.getElementById("logout").addEventListener("click",()=>{
+    window.localStorage.removeItem("userInfo")
+    window.location.href = "../index.html"
+})

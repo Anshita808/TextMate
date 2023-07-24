@@ -1,5 +1,6 @@
 const {UserModel}=require("../models/user.model");
 require("dotenv").config()
+const bcrypt= require("bcrypt")
 const passport = require("passport")
 
 const mongoose = require("mongoose")
@@ -44,11 +45,12 @@ passport.use(
 
 			const cUser = await UserModel.findOne({ email: profile.email });
 			// console.log("current user :", cUser);
+			const hashedPassword = bcrypt.hashSync(profile.id,5)
 			if (!cUser) {
 				const newUser = {
 					email: profile.email,
 					name: `${profile.name.givenName} ${profile.name.familyName}`,
-					password: profile.id,
+					password: hashedPassword,
 				};
 
 				// bcrypt.hash(password, 5, async (err, hash) => {
@@ -57,9 +59,10 @@ passport.use(
 				// 	res.status(200).send({ msg: "Registration Successful" });
 				// });
 
-				const data = await UserModel.create(newUser);
+				const data = new UserModel(newUser);
 				// console.log("New user created:", newUser);
-				request.body = newUser;
+				await data.save()
+				// request.body = newUser;
 				return done(null, newUser);
 			} else {
 				request.body = cUser;
@@ -75,6 +78,14 @@ const googleAuthentication = async (req, res) => {
   // console.log(req.user)
 
   const user = req.user
+//   console.log(user)
+  const getUser = await UserModel.findOne({email:user.email})
+	const forLocal = {
+		name : getUser.name,
+		email : getUser.email,
+		id : getUser._id
+	}
+
   // let token = jwt.sign({ UserID: user._id}, process.env.SecretKey, { expiresIn: "24h" })
 
   // const frontendURL = `https://qr-insight-craft.netlify.app/`
@@ -82,15 +93,17 @@ const googleAuthentication = async (req, res) => {
   const frontendURL = "http://127.0.0.1:5500/slim-pies-222/TEXTMATE/Frontend/index.html"
 
   res.send(`
-              <a href="${frontendURL}?userID=${user._id}" id="myid" style="display: flex; justify-content: center; align-items: center; height: 100vh; background-color: #222222; margin: 0; padding: 0; overflow: scroll;">
+              <a href="${frontendURL}?userID=${getUser._id}" id="myid" style="display: flex; justify-content: center; align-items: center; height: 100vh; background-color: #222222; margin: 0; padding: 0; overflow: scroll;">
                   <img style="width:100%;" src="https://cdn.dribbble.com/users/1787505/screenshots/7300251/media/a351d9e0236c03a539181b95faced9e0.gif" alt="https://i.pinimg.com/originals/c7/e1/b7/c7e1b7b5753737039e1bdbda578132b8.gif">
               </a>
               <script>
                   let a = document.getElementById('myid')
+				 
                   setTimeout(()=>{
                       a.click()
                   },2000)
                   console.log(a)
+				  
               </script>
       `)
 

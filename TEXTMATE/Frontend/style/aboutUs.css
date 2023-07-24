@@ -242,3 +242,45 @@ body::-webkit-scrollbar-thumb{
     background-color: #ffffff;
     border-radius: 10px;
 }
+
+/* media qureay */
+
+@media screen and (max-width: 768px) {
+    /* Add styles for small screens here */
+    body {
+      /* Adjust background image or other styles for small screens */
+      /* For example, you can use a different background image or color */
+    }
+    .mainContainer>div {
+      /* Adjust width or other styles for content on small screens */
+      width: 80%;
+    }
+    /* Add other styles as needed for small screens */
+  }
+
+  /* Media queries for medium screens (769px to 1024px) */
+  @media screen and (min-width: 769px) and (max-width: 1024px) {
+    /* Add styles for medium screens here */
+    body {
+      /* Adjust background image or other styles for medium screens */
+    }
+    .mainContainer>div {
+      /* Adjust width or other styles for content on medium screens */
+      width: 70%;
+    }
+    /* Add other styles as needed for medium screens */
+  }
+
+  /* Media queries for large screens (1025px and above) */
+  @media screen and (min-width: 1025px) {
+    /* Add styles for large screens here */
+    body {
+      /* Adjust background image or other styles for large screens */
+    }
+    .mainContainer>div {
+      /* Adjust width or other styles for content on large screens */
+      width: 50%;
+    }
+    /* Add other styles as needed for large screens */
+  }
+

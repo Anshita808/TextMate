@@ -1,5 +1,6 @@
 
 // scripts for design
+const baseURL = "https://textmatebackend-production.up.railway.app"
 
 var x=document.getElementById("signin");
 var y=document.getElementById("signup");
@@ -70,15 +71,16 @@ signupBtn.addEventListener('click', (e) => {
             
                 if(otpInput == otpNumber){
                     // popup.classList.remove("openpopup")
-
                     popup.innerHTML=`
                         <div id="load">
                             <div class="loading"></div>
                             <p>LOADING</p>
-                        </div>
-                    `
+                        </div>`
+                 setTimeout(() => {
+                     singUpFunction()
+                 }, 2000);   
+                   
 
-                    singUpFunction()
                     
                 }else{
                     document.querySelector("#otpInput>h3").innerHTML="WRONG OPT"
@@ -95,7 +97,7 @@ function singUpFunction(){
         password: passwords.value,
         name: name.value
     }
-    fetch("https://ill-trousers-crab.cyclic.app/users/register",{
+    fetch(`${baseURL}/users/register`,{
         method: "POST",
         headers: {
             "Content-Type": "application/json"
@@ -157,8 +159,10 @@ loginBtn.addEventListener('click', (e) => {
                         <p>LOADING</p>
                     </div>
                 `
-
-                loginFunction()
+                setTimeout(() => {
+                    
+                    loginFunction()
+                }, 2000);
                 
             }else{
                 document.querySelector("#otpInput>h3").innerHTML="WRONG OPT"
@@ -180,7 +184,7 @@ function loginFunction(){
 
     console.log(newUser)
 
-    fetch("https://ill-trousers-crab.cyclic.app/users/login",{
+    fetch(`${baseURL}/users/login`,{
         method: "POST",
         headers: {
             "Content-Type": "application/json"
@@ -190,8 +194,9 @@ function loginFunction(){
     .then(res=>res.json())
     .then(res=>{
         localStorage.setItem("token", res.token)
-        let user=res.user
-        user.type="free"
+        let user = res.user
+        user.type = "free"
+        console.log(user)
         localStorage.setItem("userInfo",JSON.stringify(user))
         window.location.href = "../pages/payment.html"
     })
@@ -233,4 +238,11 @@ const showPassword=document.querySelector("#eye>ion-icon:nth-child(2)")
 
         show.style.display = 'block';
         hide.style.display = 'none';
+    })
+
+    const gBtn = document.getElementById("google-auth-btn")
+
+    gBtn.addEventListener("click", (e)=>{
+            e.preventDefault()
+            window.location.href = `${baseURL}/auth/google`
     })

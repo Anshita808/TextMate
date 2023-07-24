@@ -5,6 +5,7 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>TextMate - Sign Up</title>
+    <link  rel="icon" href="../images/favicon.png" type="images/x-icon">
     <link rel="stylesheet" href="../style/signin.css">
 </head>
 <body>
@@ -17,9 +18,9 @@
                 <button type="button" class="toggle-btn" onclick="signup()">Sign Up</button>
             </div>
             <form id="signin" class="input-group">
-                <input id="signin-email" type="text" class="input-field" placeholder="Email ID" required>
+                <input id="signin-email" type="text" class="input-field" placeholder="Email ID" >
                 <span id="forEmail1" style="visibility: hidden;">please enter a valid email</span>
-                <input id="signin-password" type="password" class="input-field" placeholder="Enter Password" required>
+                <input id="signin-password" type="password" class="input-field" placeholder="Enter Password" >
                 <div id="eye">
                     <ion-icon name="eye-off-outline"></ion-icon>
                     <ion-icon name="eye-outline"></ion-icon>
@@ -30,8 +31,11 @@
                 <p>Or</p>
                 <p>Sign In with </p>
                 <div>
-                    <button id="google-auth-btn" type="submit" class="submit-btn"><img src="../images/google.png" alt=""> Google</button>
-                    <button id="github-auth-btn" type="submit" class="submit-btn"><img src="../images/github.png" alt=""> Github</button>
+                    
+                        <button id="google-auth-btn" class="submit-btn"><img src="../images/google.png" alt=""> Google</button>
+
+                    
+                    <button id="github-auth-btn" class="submit-btn"><img src="../images/github.png" alt=""> Github</button>
                 </div>
             </form>
             <form id="signup" class="input-group">
@@ -50,8 +54,8 @@
                 <p>Or</p>
                 <p>Sign Up with </p>
                 <div>
-                    <button id="google-auth-btn" type="submit" class="submit-btn"><img src="../images/google.png" alt=""> Google</button>
-                    <button id="github-auth-btn" type="submit" class="submit-btn"><img src="../images/github.png" alt=""> Github</button>
+                    <button id="google-auth-btn" class="submit-btn"><img src="../images/google.png" alt=""> Google</button>
+                    <button id="github-auth-btn" class="submit-btn"><img src="../images/github.png" alt=""> Github</button>
                 </div>
             </form>
         </div>

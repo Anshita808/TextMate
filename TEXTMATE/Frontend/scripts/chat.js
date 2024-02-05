@@ -1,5 +1,6 @@
 let userInfo = JSON.parse(localStorage.getItem("userInfo"));
 // let userInfo = null
+const baseURL = `http://localhost:8080`;
 if (userInfo) {
 	console.log(userInfo);
 
@@ -18,7 +19,7 @@ if (userInfo) {
 		window.location.href = "../pages/signin.html";
 	});
 }
-const socket = io("http://localhost:8080/", { transports: ["websocket"] });
+const socket = io(`${baseURL}/`, { transports: ["websocket"] });
 const roomName = document.querySelector("h1>span");
 const total = document.querySelector("h3>span");
 const userList = document.querySelector("#allUsers");
@@ -68,7 +69,7 @@ join_btn.addEventListener("click", (e) => {
 	console.log(room);
 
 	//get room
-	fetch(`http://localhost:8080/rooms/${room}`)
+	fetch(`${baseURL}/rooms/${room}`)
 		// .then(res=>{
 		//     res.json()
 		//     console.log(res)
@@ -101,7 +102,7 @@ create_btn.addEventListener("click", (e) => {
 	};
 	console.log(roomdetails);
 	//create room
-	fetch("http://localhost:8080/rooms/create", {
+	fetch(`${baseURL}/rooms/create`, {
 		method: "POST",
 		headers: {
 			"Content-Type": "application/json",
@@ -141,7 +142,7 @@ setInterval(() => {
 	if (check.checked && lastTextValue !== text.value) {
 		console.log(text.value);
 		lastTextValue = text.value;
-		fetch(`http://localhost:8080/rooms/${room}`, {
+		fetch(`${baseURL}/rooms/${room}`, {
 			method: "PATCH",
 			headers: {
 				"Content-Type": "application/json",
@@ -226,7 +227,7 @@ function micOff() {
 	emitUserInformation();
 }
 function micOn() {
-    mainFunction(1000)
+	mainFunction(1000);
 	document.getElementById("micOff").style.display = "none";
 	document.getElementById("micOn").style.display = "block";
 	userStatus.microphone = true;
@@ -486,9 +487,7 @@ function feedback() {
 			const minutes = Math.floor(time / 60);
 			const seconds = time % 60;
 
-			const formattedTime = `${minutes}:${seconds
-				.toString()
-				.padStart(2, "0")}`;
+			const formattedTime = `${minutes}:${seconds.toString().padStart(2, "0")}`;
 
 			timerEl.textContent = formattedTime;
 		}
